@@ -1,0 +1,48 @@
+import axios from 'axios';
+
+// set up functions for talking to our backend
+
+
+//
+export const getApiData = () => {
+  return axios.get('/api/api-stocks')
+}
+// getAllStocks
+export const getAllStocks = () => {
+  return axios.get('/api/stocks')
+}
+
+// getStockById
+export const getStockById = (stockId) => {
+  return axios.get(`/api/stocks/${stockId}`)
+}
+
+// createNewStock
+// takes in an object => {code: "code", date: "date"}
+export const createNewStock = (stockInfo) => {
+  return axios.post('/api/stocks', stockInfo)
+}
+
+// updateStock
+// takes in object => {code: "code", date: "date"} AND stock's id
+export const updateStock = (stockId, stockInfo) => {
+  return axios.put(`/api/stocks/${stockId}`, stockInfo)
+}
+
+// removeStock
+// takes in stock's id
+export const removeStock = (stockId) => {
+  return axios.delete(`/api/stocks/${stockId}`);
+}
+
+// export all functions so if someone needs to import all they can
+export default {
+  getAllStocks,
+  getStockById,
+  createNewStock,
+  updateStock,
+  removeStock,
+  getApiData
+}
+
+

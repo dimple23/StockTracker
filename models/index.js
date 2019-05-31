@@ -1,5 +1,7 @@
-const stock = require('./stock');
+const Stock = require('./Stock');
 
+
+//export object
 module.exports = {
-  stock
+  Stock
 };
