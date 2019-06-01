@@ -1,15 +1,15 @@
 
 const router = require('express').Router();
 const {
-  getAlphaStocks,
+  getAllNews,
   
-} = require('../../controllers/stockApiController');
+} = require('../../controllers/newsApiController');
 
 //define routes
 //GET & POST routes 
 
 router
 .route('/')
-.get(getAlphaStocks)
+.get(getAllNews)
 
 module.exports=router
