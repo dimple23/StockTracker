@@ -2,11 +2,11 @@ const axios = require ('axios');
 //GET all stocks
 require('dotenv').config()
 
-function getAlphaStocks(req, res) {
-  console.log ('getAllStocks') 
-  //
-  axios.get(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=1min&apikey=${process.env.alphaapi}`)
+function getAllNews(req, res) {
+  console.log ('get all stock news')
+  axios.get(`https://newsapi.org/v2/everything?q=bitcoin&from=2019-04-30&sortBy=publishedAt&apiKey=${process.env.newsapi}`)
   .then(function(data){
+    console.log(data.data);
     res.json(data.data)
   })
   .catch(function(err){
@@ -20,6 +20,6 @@ function getAlphaStocks(req, res) {
 
 // export all functions as methods
 module.exports = {
-  getAlphaStocks
+  getAllNews
   
 }

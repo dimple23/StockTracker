@@ -7,10 +7,19 @@ import axios from 'axios';
 export const getApiData = () => {
   return axios.get('/api/api-stocks')
 }
+// getAllNews
+export const getAllNews = () => {
+  return axios.get('/api/api-news')
+}
+export const quandlStock = () => {
+  return axios.get('/api/api-quandl')
+}
+
 // getAllStocks
 export const getAllStocks = () => {
   return axios.get('/api/stocks')
 }
+
 
 // getStockById
 export const getStockById = (stockId) => {

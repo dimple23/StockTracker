@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 require('dotenv').config()
@@ -8,6 +9,7 @@ require('dotenv').config()
 // set up middleware
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+
 
 // turn on routes
 const routes = require('./routes');
