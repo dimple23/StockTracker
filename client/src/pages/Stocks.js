@@ -28,12 +28,13 @@ class Stocks extends Component {
 
   render() {
     return (
+      
       <React.Fragment>
         <Jumbotron 
           fluid 
-          bg={"danger"} 
+          bg={"success"} 
           text={"dark"} 
-          pageTitle={"Viev All Stocks"} />
+          pageTitle={"View All Stocks"} />
       </React.Fragment>
     )
   }
