@@ -43,9 +43,8 @@ class Stocks extends Component {
       <React.Fragment>
         <Jumbotron 
           fluid 
-          bg={"danger"} 
-          text={"dark"} 
-          pageTitle={"Viev All Stocks"} />
+          text={"light"} 
+          pageTitle={"Stocks Tracker"} />
       </React.Fragment>
     )
   }

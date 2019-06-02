@@ -9,9 +9,16 @@ function Jumbotron(props) {
       p-5
       jumbotron 
       ${props.fluid ? "jumbotron-fluid" : ""} 
-      bg-${props.bg ? props.bg : "dark"}
       text-${props.text ? props.text : "light"}
-    `}>
+    `}
+    style={{  
+      backgroundImage: "url(" + "../../../assets/img/footer-bg-swirl.jpg" + ")",
+      backgroundPosition: 'bottom',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat'
+      
+    }}
+    >
       <h1 className="display-2">{props.pageTitle}</h1>
 
       <NavLink to="/" className="btn btn-outline-dark btn-lg m-2">
