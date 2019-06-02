@@ -7,43 +7,43 @@ import { removeStock, createNewStock } from '../utils/API';
 
 class Saved extends Component {
   state = {
-    bookList: []
+    stockList: []
   };
 
   componentDidMount() {
-    this.handleGetSavedBooks();
+    this.handleGetSavedStocks();
   }
 
-  handleGetSavedBooks = () => {
+  handleGetSavedStocks = () => {
     createNewStock()
-      .then(({ data: bookList }) => {
-        this.setState({ bookList });
+      .then(({ data: stockList }) => {
+        this.setState({ stockList });
       })
       .catch(err => console.log(err));
   };
 
-  handleRemoveBook = bookId => {
-    removeStock(bookId)
-      .then(this.handleGetSavedBooks)
+  handleRemoveStock = stockId => {
+    removeStock(stockId)
+      .then(this.handleGetSavedStocks)
       .catch(err => console.log(err));
   };
 
   render() {
     return (
       <React.Fragment>
-        <Jumbotron fluid bg={'dark'} color={'light'} pageTitle={'Viewing Saved Stocks'} />
+        <Jumbotron fluid bg={'dark'} color={'light'} pageTitle={'Saved Stocks'} />
         <div className="container-fluid">
           <Row>
-            {!this.state.bookList.length ? (
+            {!this.state.stockList.length ? (
               <h2 className="text-center">No saved stots, yet.</h2>
             ) : (
-              this.state.bookList.map(book => {
+              this.state.stockList.map(stock => {
                 return (
-                  <Col key={book._id} md={4}>
-                    <Card title={book.title} image={book.image ? book.image : undefined}>
-                      <small className="text-muted">{`By: ${book.authors.join(', ')}`}</small>
-                      <p>{book.description}</p>
-                      <button onClick={() => this.handleRemoveBook(book._id)} className="btn btn-danger btn-sm">
+                  <Col key={stock._id} md={4}>
+                    <Card title={stock.title} image={stock.image ? stock.image : undefined}>
+                      <small className="text-muted">{`By: ${stock.authors.join(', ')}`}</small>
+                      <p>{stock.description}</p>
+                      <button onClick={() => this.handleRemoveStock(stock._id)} className="btn btn-danger btn-sm">
                         Remove Stock
                       </button>
                     </Card>
