@@ -1,33 +1,27 @@
 import React, { Component } from 'react';
-import Jumbotron from '../components/Jumbotron';
-import { getAllStocks, getApiData } from '../utils/API';
+//import Jumbotron from '../components/Jumbotron';
+import { NavLink } from 'react-router-dom';
 class User extends Component {
   state = {
 
   }
-  componentDidMount() {
-    this.getStocks();
-    this.handeGetApiData();
-  }
 
-  handeGetApiData = () => {
-    getApiData().then(({data}) => this.setState({stockapikeys: data}))
-  }
-  getStocks = () => {
-    getAllStocks().then(({data: dbStockData}) => this.setState({stocklist: dbStockData})).catch(err => console.log(err));
-
-  }
   render() {
     return (
-      
-        <Jumbotron 
-          fluid 
-          bg={"info"} 
-          text={"dark"} 
-          pageTitle={"Viev All Stocks"} />
-     
+      <div className='btn-outline-info'>
+      <h1 className="display-2 text-center ">Welcome </h1>
+      <div className='align-center  '>
+      <NavLink to="/" className="btn btn-outline-dark btn-lg m-2 ">
+              Sign in
+      </NavLink>
+
+      <NavLink to="/add" className="btn btn-outline-warning btn-lg m-2">
+       Sign up
+      </NavLink>
+      </div>
+      </div>
     )
-    }
   }
+}
 
 export default User;

@@ -1,4 +1,4 @@
-// import express roter and controllers
+//import express roter and controllers
 
 const router = require('express').Router();
 const {

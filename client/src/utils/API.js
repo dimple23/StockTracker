@@ -53,5 +53,3 @@ export default {
   removeStock,
   getApiData
 }
-
-
