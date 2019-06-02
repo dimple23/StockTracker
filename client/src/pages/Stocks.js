@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Jumbotron from '../components/Jumbotron';
+import Jumbotron from '../components/Jumbotron/Jumbotron';
 import { getAllStocks, getApiData, getAllNews, quandlStock } from '../utils/API';
 
 class Stocks extends Component {
