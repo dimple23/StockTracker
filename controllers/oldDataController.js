@@ -6,7 +6,7 @@ function quandlStock(req, res) {
   console.log ('get all stock in reall')
   axios.get(`https://www.quandl.com/api/v3/datasets/WIKI/FB/data.json?api_key=${process.env.quandlapi}`)
   .then(function(data){
-    console.log(data.data);
+    // console.log(data.data);
     res.json(data.data)
   })
   .catch(function(err){

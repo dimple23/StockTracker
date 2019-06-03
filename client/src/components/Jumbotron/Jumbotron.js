@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './App.css';
+//import './App.css';
 
 // create a function to export a jumbotron component
 function Jumbotron(props) {
@@ -12,12 +12,16 @@ function Jumbotron(props) {
       jumbotron 
       
       ${props.fluid ? "jumbotron-fluid" : ""} 
-      bg-${props.bg ? props.bg : "dark"}
-      text-${props.text ? props.text : "light"
-       }
-    `}>
-     <div className={' disply-1 p-5 navbar bg-dark  sticky-top text-light'} />
-    
+      text-${props.text ? props.text : "light"}
+    `}
+    style={{  
+      backgroundImage: "url(" + "../../../assets/img/footer-bg-swirl.jpg" + ")",
+      backgroundPosition: 'bottom',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat'
+      
+    }}
+    >
       <h1 className="display-2">{props.pageTitle}</h1>
 
       <NavLink to="/" className="btn btn-outline-dark btn-lg m-2">

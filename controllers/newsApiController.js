@@ -4,9 +4,9 @@ require('dotenv').config()
 
 function getAllNews(req, res) {
   console.log ('get all stock news')
-  axios.get(`https://newsapi.org/v2/everything?q=bitcoin&from=2019-04-30&sortBy=publishedAt&apiKey=${process.env.newsapi}`)
+  axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${process.env.newsapi}`)
   .then(function(data){
-    console.log(data.data);
+    // console.log(data.data);
     res.json(data.data)
   })
   .catch(function(err){
