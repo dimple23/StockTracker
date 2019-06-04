@@ -5,6 +5,7 @@ import Col from '../components/collom/col';
 import Card from '../components/Card';
 import { removeStock, createNewStock } from '../utils/API';
 
+
 class Saved extends Component {
   state = {
     stockList: []
@@ -33,6 +34,8 @@ class Saved extends Component {
       <React.Fragment>
         <Jumbotron fluid bg={'dark'} color={'light'} pageTitle={'Saved Stocks'} />
         <div className="container-fluid">
+        
+      
           <Row>
             {!this.state.stockList.length ? (
               <h2 className="text-center">No saved stots, yet.</h2>

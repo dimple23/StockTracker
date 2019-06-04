@@ -4,6 +4,7 @@ import {
     ListGroupItem
 } from 'reactstrap';
 
+
 import axios from 'axios';
 
 
@@ -55,7 +56,7 @@ class StockNews extends Component {
                     <ListGroup id="news" className="stock-chart">
                         {news.map((article) => (
                             <ListGroupItem key={article.title} className="news-item">
-                                <a href={article.url} target="_blank">
+                                <a href={article.url}>
                                     {article.title} -  {article.author} </a>
                                     <small>{article.description} </small>
                             </ListGroupItem>
