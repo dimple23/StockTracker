@@ -13,14 +13,15 @@ class StockData extends Component {
         stock: []
     };
 
-    addData = (data) => {
-        data.forEach((data) => {
+    addData= (data) => {
+        console.log(data.dataset_data.column_names[0]);
+        data.forEach((dataset_data) => {
 
             let newData = {
-                source: data.data[0],
+                source: dataset_data,
                 
             }
-            console.log(data.data);
+            
 
             this.setState(state => ({
                 stock: [...state.stock, newData]
@@ -33,6 +34,7 @@ class StockData extends Component {
         const link = `https://www.quandl.com/api/v3/datasets/WIKI/FB/data.json?api_key=y_B-aU-YykoRPGgTuTpG`;
         axios
             .get(link)
+           
             .then(stock => {
                 const data = stock.data.data;
                 this.addData(data)
@@ -40,7 +42,7 @@ class StockData extends Component {
             .catch(err => console.log(err));
 
     }
-
+    
 
     render() {
 
