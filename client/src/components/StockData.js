@@ -10,52 +10,50 @@ import axios from 'axios';
 
 class StockData extends Component {
     state = {
-        stock: []
+      Stockdata: []
     };
 
-    addData= (data) => {
-        console.log(data.dataset_data.column_names[0]);
-        data.forEach((dataset_data) => {
+    addHeadlines = (Stockdata) => {
+      Stockdata.forEach(() => {
 
             let newData = {
-                source: dataset_data,
                 
             }
-            
 
             this.setState(state => ({
-                stock: [...state.stock, newData]
+              Stockdata: [...state.Stockdata, newData]
             }));
 
         })
     };
 
-    getstock = (stock) => {
-        const link = `https://www.quandl.com/api/v3/datasets/WIKI/FB/data.json?api_key=y_B-aU-YykoRPGgTuTpG`;
+    getStock = (Stockdata) => {
+        const link = 'https://www.quandl.com/api/v3/datasets/WIKI/${stock.code}.json?limit=30&collapse=weekly&api_key=y_B-aU-YykoRPGgTuTpG';
+        ;
         axios
             .get(link)
-           
-            .then(stock => {
-                const data = stock.data.data;
-                this.addData(data)
+            .then(Stockdata => {
+                const Stockdata = Stockdata.data;
+                this.addHeadlines(Stockdata)
             })
             .catch(err => console.log(err));
 
     }
-    
+
 
     render() {
 
-        const { stock } = this.state;
+        const { Stockdata} = this.state;
 
-        if (stock.length <= 0) {
-            this.getstock(stock);
+        if (Stockdata.length <= 0) {
+            this.getStock(Stockdata);
         }
 
         return (
                     <ListGroup id="stock" className="stock-chart">
-                        {stock.map((data) => (
-                            <ListGroupItem key={data.data} className="data-item">
+                        {Stockdata.map((Stockdata) => (
+                            <ListGroupItem key={Stockdata.data} className="stock-item">
+                                
                                     
                             </ListGroupItem>
                         ))

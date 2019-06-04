@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Jumbotron from '../components/Jumbotron/Jumbotron';
+import Jumbotron from '../components/Jumbotron';
 import Row from '../components/Row';
-import Col from '../components/collom/col';
+import Col from '../components/col';
 import Card from '../components/Card';
 import { removeStock, createNewStock } from '../utils/API';
 
