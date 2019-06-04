@@ -53,8 +53,9 @@ class StockData extends Component {
 
         return (
                     <ListGroup id="stock" className="stock-chart">
+                      <div style={{  position: "absolute", width: 800, height: 450}}></div>
                       <h1 className="text-center tab- table-info "> StockData</h1>
-                      <table class="table table-striped table-info">
+                      <table class="table table-striped table-info ">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -85,7 +86,7 @@ class StockData extends Component {
                         ))
                         }
                     </ListGroup>
-
+             
         );
     }
 }

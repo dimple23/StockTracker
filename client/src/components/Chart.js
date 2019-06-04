@@ -11,12 +11,12 @@ class Chart extends Component {
         datasets: [
           {
             label: "Videos Mades",
-            backgroundColor: "rgba(255, 0, 255, 0.75)",
+            backgroundColor: "rgb(0, 191, 255)",
             data: [4, 5, 1, 10, 32, 2, 12]
           },
           {
             label: "Subscriptions",
-            backgroundColor: "rgba(0, 255, 0, 0.75)",
+            backgroundColor: "rgb(0, 191, 255)",
             data: [14, 15, 21, 0, 12, 4, 2]
 
           }
@@ -35,7 +35,7 @@ class Chart extends Component {
   getChartData = canvas => {
     const data = this.props.data;
     if (data.datasets) {
-      let colors = ["rgba(255, 0, 255, 0.75)", "rgba(0, 255, 0, 0.75)"];
+      let colors = ["rgb(0, 191, 255)", "rgb(0, 191, 255)"];
       data.datasets.forEach((set, i) => {
         set.backgroundColor = this.setGradientColor(canvas, colors[i]);
         set.borderColor = "red";
@@ -48,7 +48,7 @@ class Chart extends Component {
 
   render() {
     return (
-      <div style={{ position: "relative", width: 850, height: 1000}}>
+      <div style={{ position: "relative", width: 800, height: 450}}>
         <h3> Stock Chart </h3>
 
         <Line 
