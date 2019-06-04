@@ -10,8 +10,7 @@ function Jumbotron(props) {
       text-center
       p-1
       jumbotron 
-      
-      ${props.fluid ? "jumbotron-fluid" : ""} 
+      ${props.fluid ? "jumbotron-fluid" : ""}
       text-${props.text ? props.text : "light"}
     `}
     style={{  

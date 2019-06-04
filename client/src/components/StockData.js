@@ -10,31 +10,33 @@ import axios from 'axios';
 
 class StockData extends Component {
     state = {
-      Stockdata: []
+     data: []
     };
 
-    addHeadlines = (Stockdata) => {
-      Stockdata.forEach(() => {
+    addHeadlines = (data) => {
+      data.forEach((data) => {
 
             let newData = {
-                
+                column_names: data.column_names,
+                data: data.data
+
             }
 
             this.setState(state => ({
-              Stockdata: [...state.Stockdata, newData]
+              data: [...state.data, newData]
             }));
 
         })
     };
 
-    getStock = (Stockdata) => {
-        const link = 'https://www.quandl.com/api/v3/datasets/WIKI/${stock.code}.json?limit=30&collapse=weekly&api_key=y_B-aU-YykoRPGgTuTpG';
+    getAllStock = (data) => {
+        const link ='https://www.quandl.com/api/v3/datasets/WIKI/${stock.code}.json?limit=30&collapse=weekly&api_key=y_B-aU-YykoRPGgTuTpG';
         ;
         axios
             .get(link)
-            .then(Stockdata => {
-                const Stockdata = Stockdata.data;
-                this.addHeadlines(Stockdata)
+            .then(data => {
+                const NewStockdata =data.data;
+                this.addHeadlines( NewStockdata)
             })
             .catch(err => console.log(err));
 
@@ -43,16 +45,40 @@ class StockData extends Component {
 
     render() {
 
-        const { Stockdata} = this.state;
+        const {data} = this.state;
 
-        if (Stockdata.length <= 0) {
-            this.getStock(Stockdata);
+        if (data.length <= 0) {
+            this.getAllStock(data);
         }
 
         return (
                     <ListGroup id="stock" className="stock-chart">
-                        {Stockdata.map((Stockdata) => (
-                            <ListGroupItem key={Stockdata.data} className="stock-item">
+                      <h1 className="text-center tab- table-info "> StockData</h1>
+                      <table class="table table-striped table-info">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      
+    </tr>
+  </tbody>
+</table>
+                      
+                        {data.map((data) => (
+                            <ListGroupItem key={data.data} className="stock-item">
                                 
                                     
                             </ListGroupItem>

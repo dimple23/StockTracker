@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Bar, Line, Pie } from 'react-chartjs-2';
+import { Line} from 'react-chartjs-2';
 
 
 class Chart extends Component {
@@ -48,7 +48,7 @@ class Chart extends Component {
 
   render() {
     return (
-      <div style={{ position: "relative", width: 800, height: 750 }}>
+      <div style={{ position: "absolute", width: 800, height: 750 }}>
         <h3> Stock Chart </h3>
 
         <Line 

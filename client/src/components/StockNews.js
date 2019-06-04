@@ -36,7 +36,7 @@ class StockNews extends Component {
         axios
             .get(link)
             .then(news => {
-                const articles = news.data.articles.slice(0, 8);
+                const articles = news.data.articles.slice(0, 5);
                 this.addHeadlines(articles)
             })
             .catch(err => console.log(err));
@@ -53,7 +53,9 @@ class StockNews extends Component {
         }
 
         return (
+          
                     <ListGroup id="news" className="stock-chart">
+                          <h1 className="text-center tab- table-info "> News </h1>
                         {news.map((article) => (
                             <ListGroupItem key={article.title} className="news-item">
                                 <a href={article.url}>

@@ -48,7 +48,7 @@ class Chart extends Component {
 
   render() {
     return (
-      <div style={{ position: "relative", width: 800, height: 750 }}>
+      <div style={{ position: "relative", width: 850, height: 1000}}>
         <h3> Stock Chart </h3>
 
         <Line 
