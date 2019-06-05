@@ -10,16 +10,16 @@ class Chart extends Component {
         labels: ["1", "2", "3", "4", "5"],
         datasets: [
           {
-            label: "Videos Mades",
+            label: "BTC",
             backgroundColor: "rgba(255, 0, 255, 0.75)",
             data: [4, 5, 1, 10, 32, 2, 12]
           },
-          {
-            label: "Subscriptions",
-            backgroundColor: "rgba(0, 255, 0, 0.75)",
-            data: [14, 15, 21, 0, 12, 4, 2]
+          // {
+          //   label: "Subscriptions",
+          //   backgroundColor: "rgba(0, 255, 0, 0.75)",
+          //   data: [14, 15, 21, 0, 12, 4, 2]
 
-          }
+          // }
         ]
       }
     }

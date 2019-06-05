@@ -10,16 +10,16 @@ class Chart extends Component {
         labels: ["1", "2", "3", "4", "5"],
         datasets: [
           {
-            label: "Videos Mades",
+            label: "MSFT",
             backgroundColor: "rgb(0, 191, 255)",
             data: [4, 5, 1, 10, 32, 2, 12]
           },
-          {
-            label: "Subscriptions",
-            backgroundColor: "rgb(0, 191, 255)",
-            data: [14, 15, 21, 0, 12, 4, 2]
+          // {
+          //   label: "BTC",
+          //   backgroundColor: "rgb(0, 191, 255)",
+          //   data: [14, 15, 21, 0, 12, 4, 2]
 
-          }
+          // }
         ]
       }
     }
@@ -28,7 +28,7 @@ class Chart extends Component {
     const ctx = canvas.getContext('2d');
     const gradient = ctx.createLinearGradient(0, 0, 0, 400);
     gradient.addColorStop(0, color);
-    gradient.addColorStop(0.95, "rgba(133, 255, 144, 0.85)");
+    gradient.addColorStop(0.95, "rgba(133, 255, 144, 0.45)");
     return gradient;
   }
 
