@@ -1,7 +1,5 @@
-const Stock = require('./Stock');
-
-
-//export object
 module.exports = {
-  Stock
+ Stock: require("./stock"),
+  User: require("./user"),
+  
 };

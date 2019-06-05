@@ -1,7 +1,0 @@
-db.stock.insertOne(
-   { code:'tata '}
-)
-
-db.stock.insertOne(
-   { code:'tata ' ,date:'06/11/2019'}
-)

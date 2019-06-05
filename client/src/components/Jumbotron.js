@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 // create a function to export a jumbotron component
 function Jumbotron(props) {
+  console.log(props);
   return (
     
     <div className={`
@@ -23,20 +24,14 @@ function Jumbotron(props) {
     >
       <h1 className="display-2">{props.pageTitle}</h1>
 
-      <NavLink to="/" className="btn btn-outline-dark btn-lg m-2">
-        View All Stocks
-      </NavLink>
-
-      <NavLink to="/add" className="btn btn-outline-warning btn-lg m-2">
-        Add A New Stock
-      </NavLink>
-      <NavLink to="/signin" className="btn btn-outline-dark btn-lg m-2">
+      
+      <button  className="btn btn-outline-dark btn-lg m-2">
        Sign In
-      </NavLink>
+      </button>
 
-      <NavLink to="/add" className="btn btn-outline-warning btn-lg m-2">
+      <button  className="btn btn-outline-warning btn-lg m-2">
         Sign Up
-      </NavLink>
+      </button>
       
       
     </div>
