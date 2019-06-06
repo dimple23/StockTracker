@@ -10,7 +10,8 @@ function Login({
   email,
   password,
   input,
-  submit
+  submit,
+ login
 }) {
   
 
@@ -77,7 +78,7 @@ function Login({
                   />
                   {/* <a href="#">Forgot your password?</a> */}
                   <button
-                  onClick={submit}
+                  onClick={login}
                   >Sign In</button>
                 </form>
               </div>
@@ -87,7 +88,7 @@ function Login({
                     <h1>Welcome Back!</h1>
                     <p>To keep connected with us please login with your personal info</p>
                     <button 
-                    onClick={submit}
+                    onClick={login}
                     
                     className="ghost" id="signIn">Sign In</button>
                   </div>

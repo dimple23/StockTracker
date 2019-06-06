@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { Redirect} from 'react-router-dom';
 import Jumbotron from '../components/Jumbotron';
 import Login from '../components/auth';
 import { registerUser } from "../utils/userAPIs";
-
+import { loginUser } from "../utils/userAPIs";
 
 
 //import Col from '../components/col';
@@ -14,7 +15,8 @@ class Saved extends Component {
   state = {
     firstName: "",
     email: "",
-    password: ""
+    password: "",
+    isLoggedIn: false
   };
 
   componentDidMount() {
@@ -57,10 +59,34 @@ class Saved extends Component {
     });
 
     return registerUser(this.state);
+    
   };
 
+  handleFormlogin = event => {
+    // Preventing the default behavior of the form submit (which is to refresh the page)
+    event.preventDefault();
+
+    // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
+    console.log(`Hello  ${this.state.email} ${this.state.password}`);
+    this.setState({
+      
+      email: "",
+      password: ""
+    });
+
+     loginUser(this.state)
+      .then(() => {
+        this.setState({
+          isLoggedIn: true
+        })
+      })
+  };
 
   render() {
+    if (this.state.isLoggedIn) {
+      return <Redirect to="/" />
+    }
+
     return (
       <React.Fragment>
         <Jumbotron fluid bg={'dark'} color={'light'} pageTitle={'Saved Stocks'} />
@@ -73,7 +99,7 @@ class Saved extends Component {
           password={this.state.password}
           input={this.handleInputChange}
           submit={this.handleFormSubmit}
-
+          login={this.handleFormlogin}
         />
         
        

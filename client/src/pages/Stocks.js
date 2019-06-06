@@ -4,6 +4,7 @@ import { getAllStocks, getApiData, getAllNews, quandlStock } from '../utils/API'
 import Image from '../components/image/Index'
 import Chart from "../components/Chart";
 import moment from "moment";
+import StockNews from '../components/StockNews';
 
 class Stocks extends Component {
   state = {
@@ -90,7 +91,7 @@ class Stocks extends Component {
 
           // }
         ]}} />
-
+        <StockNews/>
       </React.Fragment>
     )
   }

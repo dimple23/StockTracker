@@ -8,13 +8,14 @@ import axios from 'axios';
 export const registerUser = (userInfo) => {
     return axios.post('/api/user/register', userInfo)
 }
+export const loginUser = (userInfo) => {
+    return axios.post('/api/user/login', userInfo)
+}
 
 // loginUser
 // takes in an object
 // linked to user-router.js
-export const loginUser = (userInfo) => {
-    return axios.post('/api/users/login', userInfo)
-}
+
 
 
 // getAllUsers
