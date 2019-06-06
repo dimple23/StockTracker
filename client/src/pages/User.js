@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect} from 'react-router-dom';
 import Jumbotron from '../components/Jumbotron';
 import Login from '../components/auth';
 import { registerUser } from "../utils/userAPIs";
@@ -14,7 +15,8 @@ class Saved extends Component {
   state = {
     firstName: "",
     email: "",
-    password: ""
+    password: "",
+    isLoggedIn: false
   };
 
   componentDidMount() {
@@ -72,10 +74,19 @@ class Saved extends Component {
       password: ""
     });
 
-    return loginUser(this.state);
+     loginUser(this.state)
+      .then(() => {
+        this.setState({
+          isLoggedIn: true
+        })
+      })
   };
 
   render() {
+    if (this.state.isLoggedIn) {
+      return <Redirect to="/" />
+    }
+
     return (
       <React.Fragment>
         <Jumbotron fluid bg={'dark'} color={'light'} pageTitle={'Saved Stocks'} />
