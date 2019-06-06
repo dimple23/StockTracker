@@ -1,4 +1,10 @@
-var userSchema = new Schema({
+// import mongoose
+const mongoose = require('mongoose');
+
+const { Schema } = mongoose;
+
+// Create Schema
+const JoinSchema = new Schema({
   name: {
       type: String,
       required: 'Please enter your name',
@@ -16,9 +22,14 @@ var userSchema = new Schema({
       type: String,
       required: true
   },
-  // gender: {
-  //     type: String
-  // },
-  resetPasswordToken:String,
-  resetPasswordExpires:Date,
+  
+//   resetPasswordToken:String,
+//   resetPasswordExpires:Date,
 });
+
+// create module
+const Join = mongoose.model('join', JoinSchema);
+// export module
+
+module.exports = Join;
+

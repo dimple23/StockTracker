@@ -8,6 +8,8 @@ function Jumbotron(props) {
     
     <div className={`
       text-center
+      mb-0
+      sticky-top
       p-1
       jumbotron 
       ${props.fluid ? "jumbotron-fluid" : ""}
@@ -17,13 +19,15 @@ function Jumbotron(props) {
       backgroundImage: "url(" + "../../../assets/img/footer-bg-swirl.jpg" + ")",
       backgroundPosition: 'bottom',
       backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat'
+      backgroundRepeat: 'no-repeat',
+      
+      
       
     }}
     >
       <h1 className="display-2">{props.pageTitle}</h1>
 
-      <NavLink to="/" className="btn btn-outline-dark btn-lg m-2">
+      {/* <NavLink to="/" className="btn btn-outline-dark btn-lg m-2">
         View All Stocks
       </NavLink>
 
@@ -32,10 +36,10 @@ function Jumbotron(props) {
       </NavLink>
       <NavLink to="/signin" className="btn btn-outline-dark btn-lg m-2">
        Sign In
-      </NavLink>
+      </NavLink> */}
 
-      <NavLink to="/add" className="btn btn-outline-warning btn-lg m-2">
-        Sign Up
+      <NavLink to="/add" className="btn btn-outline-primary btn-lg m-2 justify-content-end">
+        Join
       </NavLink>
       
       

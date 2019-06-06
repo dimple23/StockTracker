@@ -22,9 +22,9 @@ function Login({
                 <form action="#">
                   <h1>Create Account</h1>
                   <div className="social-container">
-                    <Link to={'/'} className="social"><i className="fab fa-facebook-f"></i></Link>
+                    {/* <Link to={'/'} className="social"><i className="fab fa-facebook-f"></i></Link>
                     <Link to={'/'} className="social"><i className="fab fa-google-plus-g"></i></Link>
-                    <Link to={'/'} className="social"><i className="fab fa-linkedin-in"></i></Link>
+                    <Link to={'/'} className="social"><i className="fab fa-linkedin-in"></i></Link> */}
                   </div>
                   <span>or use your email for registration</span>
                   <input
