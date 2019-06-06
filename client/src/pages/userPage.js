@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { Redirect } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
+
+//import { Redirect } from 'react-router-dom';
+//import { NavLink } from 'react-router-dom';
 
 // Importing custom Components
-
+import AppHeader from '../components/AppHeader/AppHeader';
+import Navbar from '../components/Navbar/Navbar';
 import Registration from '../components/Registration/Registration';
 //import Jumbotron from '../components/Jumbotron';
 
@@ -12,8 +13,8 @@ import Registration from '../components/Registration/Registration';
 
 // Importing APIs
                 
-  import { registerUser, loginUser, getAllUsers, getUserById } from '../utils/userAPIs';
-import Jumbotron from '../components/Jumbotron';
+  import { registerUser, loginUser, getAllUsers} from '../utils/userAPIs';
+//import Jumbotron from '../components/Jumbotron';
 
 
 
@@ -205,12 +206,12 @@ class userPage extends Component {
         return (
             <React.Fragment>
                 <div>
-                    <Jumbotron
-                        regStatus={this.state.showLogin}
+                    <AppHeader
+                        handleFormSwitch={this.handleFormSwitch}
                         userLoggedIn={this.state.userLoggedIn}
-                        onChange={this.handleInputChange}
-                        handleFormSubmit={this.handleFormSubmit}
-
+                        fullName={`${this.state.firstName} ${this.state.lastName}`}
+                        nickName={this.state.nickName}
+                        email={this.state.email}
                     />
 
 
@@ -221,40 +222,21 @@ class userPage extends Component {
                         handleFormSubmit={this.handleFormSubmit}
                     />
 
-                    <div className="row bg-info my-3 pl-5 py-2">
-                        <h4 className="text-light">Full Stack Web-Development Questions</h4>
-                    </div>
-
+                   
                     <div className="row container-fluid">
 
-                        {/* Left navigation Bar */}
-                        <div className="col-2"
-                            style={{
-                                borderRight: "5px solid red"
-                            }}>
-                            
-                        </div>
-
-
-                        {/* Questions Window */}
-                        <div className="col-7"
-                            style={{
-                                borderRight: "5px solid red"
-                            }}>
+                        
                             
                             
 
                         </div>
+                      <Navbar/>
 
-
-                        {/* Job Opportunities Window */}
-                        <div className="col-3">
-                            {/* Call Jobs list here */}
-                        </div>
+                        
 
                     </div>
 
-                </div>
+                
             </React.Fragment>
         )
     }

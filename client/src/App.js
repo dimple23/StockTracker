@@ -15,6 +15,7 @@ function App() {
     <Router>
       <div>
         <Switch>
+        <Route exact path="/" component={userPage} />
           <Route exact path="/" component={Stocks} />
           <Route exact path="/add" component={User} />
           <Route exact path="/update/:id" component={User} />
@@ -26,6 +27,7 @@ function App() {
         </Switch>
         <StockNews/>
         <StockData/>
+        
       </div>
     </Router>
   );
