@@ -1,5 +1,5 @@
 import React from 'react';
-//import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 //import './App.css';
 
 // create a function to export a jumbotron component
@@ -9,6 +9,8 @@ function Jumbotron(props) {
     
     <div className={`
       text-center
+      mb-0
+      sticky-top
       p-1
       jumbotron 
       ${props.fluid ? "jumbotron-fluid" : ""}
@@ -18,20 +20,28 @@ function Jumbotron(props) {
       backgroundImage: "url(" + "../../../assets/img/footer-bg-swirl.jpg" + ")",
       backgroundPosition: 'bottom',
       backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat'
+      backgroundRepeat: 'no-repeat',
+      
+      
       
     }}
     >
       <h1 className="display-2">{props.pageTitle}</h1>
 
-      
-      <button  className="btn btn-outline-dark btn-lg m-2 position:relative">
-       Sign In
-      </button>
+      {/* <NavLink to="/" className="btn btn-outline-dark btn-lg m-2">
+        View All Stocks
+      </NavLink>
 
-      <button  className="btn btn-outline-warning btn-lg m-2">
-        Sign Up
-      </button>
+      <NavLink to="/add" className="btn btn-outline-warning btn-lg m-2">
+        Add A New Stock
+      </NavLink>
+      <NavLink to="/signin" className="btn btn-outline-dark btn-lg m-2">
+       Sign In
+      </NavLink> */}
+
+      <NavLink to="/add" className="btn btn-outline-primary btn-lg m-2">
+        Join
+      </NavLink>
       
       
     </div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Jumbotron from '../components/Jumbotron';
 import { getAllStocks, getApiData, getAllNews, quandlStock } from '../utils/API';
+import Image from '../components/image/Index'
 import Chart from "../components/Chart";
 import moment from "moment";
 
@@ -68,7 +69,7 @@ class Stocks extends Component {
         {/* <h1> {Object.keys(this.state.stockapikeys).length ? this.state.stockapikeys["Time Series (Daily)"]["1. Information"] : ""} </h1> */}
         {/* {console.log(this.state.stockapikeys)} */}
 
-        
+        <Image />
         <Chart data={{
           labels: ["open", "high", "low", "close", "adjusted"],
           datasets: [
