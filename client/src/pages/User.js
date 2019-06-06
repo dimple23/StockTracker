@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Jumbotron from '../components/Jumbotron';
 import Login from '../components/auth';
+import { registerUser } from "../utils/userAPIs";
+
 
 
 //import Col from '../components/col';
@@ -53,6 +55,8 @@ class Saved extends Component {
       email: "",
       password: ""
     });
+
+    return registerUser(this.state);
   };
 
 
@@ -64,12 +68,12 @@ class Saved extends Component {
 
         <Login 
 
-        name={this.state.firstName}
-        email={this.state.email}
-        password={this.state.password}
-        input={this.handleInputChange}
-        submit={this.handleFormSubmit}
-        
+          name={this.state.firstName}
+          email={this.state.email}
+          password={this.state.password}
+          input={this.handleInputChange}
+          submit={this.handleFormSubmit}
+
         />
         
        

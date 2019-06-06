@@ -6,7 +6,7 @@ import axios from 'axios';
 // takes in an object
 // linked to user-router.js
 export const registerUser = (userInfo) => {
-    return axios.post('/api/user/register', userInfo)
+    return axios.post('/api/users/register', userInfo)
 }
 
 // loginUser

@@ -44,7 +44,7 @@ class Chart extends Component {
     }
     return data;
   }
-
+ 
 
   render() {
     return (

@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 
-const { User } = require('../models/user');
+const { Users } = require('../models');
 const handle = require('../utils/promise-handler');
 
 
@@ -15,8 +15,8 @@ const register = (req, res) => {
   console.log("Inside user-controller -> POST '/api/user/register' -> register");
   console.log(req.body);
 
-  // User.save(req.body)
-  User.create(req.body)
+  // Users.save(req.body)
+  Users.create(req.body)
     .then(dbUserData => res.status(200).json(dbUserData))
     .catch(err => {
       console.log(err);
@@ -32,7 +32,7 @@ const login = async (req, res) => {
   const { email, password } = req.body;
 
   // find user based on email
-  const [findUserErr, userInfo] = await handle(User.findOne({ email }));
+  const [findUserErr, userInfo] = await handle(Users.findOne({ email }));
 
   if (findUserErr) {
     console.log(findUserErr);
@@ -73,13 +73,15 @@ const login = async (req, res) => {
       res.cookie('token', token, { httpOnly: true }).status(200).json(token);
     }
     // END LOGIN
+  }
+}
 
     // START GET USER PROFILE
     const getUserProfile = async (req, res) => {
 
       console.log("Inside GET '/api/user' -> getUserProfile");
 
-      const [userErr, userProfile] = await handle(User.findById(req._id));
+      const [userErr, userProfile] = await handle(Users.findById(req._id));
 
       if (userErr) {
         res.status(500).json(userErr);
@@ -96,7 +98,7 @@ const login = async (req, res) => {
       console.log("-----req.body------");
       console.log(req.body);
 
-      const [userErr, userProfile] = await handle(User.findById(req._id));
+      const [userErr, userProfile] = await handle(Users.findById(req._id));
 
       if (userErr) {
         res.status(500).json(userErr);
@@ -110,7 +112,7 @@ const login = async (req, res) => {
 
           console.log("password NOT changed --------------------------");
 
-          User.findByIdAndUpdate(req._id, req.body, (error, userData) => {
+          Users.findByIdAndUpdate(req._id, req.body, (error, userData) => {
 
             if (error) {
               return res.status(500).json({
@@ -141,7 +143,7 @@ const login = async (req, res) => {
                 message: "Error updating new data."
               });
             } else {
-              console.log("User profile data successfully saved!");
+              console.log("Users profile data successfully saved!");
               console.log(userProfile);
 
               res.status(200).json(userProfile);
@@ -156,12 +158,12 @@ const login = async (req, res) => {
 
 
 
-    // export our methods
-    module.exports = {
-      getUserProfile,
-      login,
-      register,
-      updateUserProfile
-    }
-  }
+    
+
+// export our methods
+module.exports = {
+  getUserProfile,
+  login,
+  register,
+  updateUserProfile
 }

@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 // Import methods we exported from user-controller
-const {register, login, getUserProfile, updateUserProfile } = require('../../controllers/user-controller');
+const {register, login, getUserProfile, updateUserProfile } = require('../../controllers/userController');
 
 // Import authentication method 
 const withAuth = require('../../middleware/authentication');

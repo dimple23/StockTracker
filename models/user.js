@@ -9,34 +9,20 @@ const { Schema } = mongoose;
 
 const UserSchema = new Schema({
 
-  firstName: {
+  Name: {
     type: String,
     trim: true,
-    required: 'Please enter your first name'
   },
 
-  lastName: {
-    type: String,
-    trim: true,
-    required: 'Please enter your last name'
-  },
-
-  nickName: {
-    type: String,
-    trim: true,
-    required: 'Please enter your nick name'
-  },
-
+ 
   email: {
     type: String,
-    required: 'Please enter your email Id',
     unique: true,
     match: [/.+@.+\../, "A valid email address must be used!"]
   },
 
   password: {
     type: String,
-    required: 'Please enter valid password'
   }
 
   
@@ -96,14 +82,6 @@ UserSchema.methods.isCorrectPassword = function isCorrectPassword(password) {
 }
 
 
-// set fullname method
-UserSchema.methods.setFullName = function setFullName() {
-
-  console.log("Inside UserSchema.methods.setFullName()");
-
-  this.fullName = `${this.firstName} ${this.lastName}`;
-  return this.fullName;
-}
 
 
 // Export "user" table

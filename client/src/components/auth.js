@@ -11,7 +11,6 @@ function Login({
   password,
   input,
   submit
-
 }) {
   
 

@@ -1,5 +1,5 @@
 module.exports = {
  Stock: require("./stock"),
-  User: require("./user"),
+  Users: require("./user"),
   
 };
