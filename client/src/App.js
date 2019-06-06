@@ -4,7 +4,7 @@ import Stocks from './pages/Stocks';
 import User from './pages/User';
 import StockNews from './components/StockNews';
 import StockData from './components/StockData';
-import userPage from './pages/userPage';
+//import userPage from './pages/userPage';
 
 //import Login from "./containers/login";
 
@@ -15,7 +15,7 @@ function App() {
     <Router>
       <div>
         <Switch>
-        <Route exact path="/" component={userPage} />
+       
           <Route exact path="/" component={Stocks} />
           <Route exact path="/add" component={User} />
           <Route exact path="/update/:id" component={User} />

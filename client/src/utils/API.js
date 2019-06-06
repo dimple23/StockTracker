@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { userInfo } from 'os';
+//import { userInfo } from 'os';
 
 // set up functions for talking to our backend
 

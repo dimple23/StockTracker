@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 import AppHeader from '../components/AppHeader/AppHeader';
 import Navbar from '../components/Navbar/Navbar';
 import Registration from '../components/Registration/Registration';
-//import Jumbotron from '../components/Jumbotron';
+import Jumbotron from '../components/Jumbotron';
 
 
 

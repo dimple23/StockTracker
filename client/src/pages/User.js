@@ -3,9 +3,9 @@ import Jumbotron from '../components/Jumbotron';
 import Login from '../components/auth';
 
 
-import Col from '../components/col';
-import Card from '../components/Card';
-import { removeStock, createNewStock } from '../utils/API';
+//import Col from '../components/col';
+//import Card from '../components/Card';
+//import { removeStock, createNewStock } from '../utils/API';
 
 
 class Saved extends Component {

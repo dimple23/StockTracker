@@ -4,7 +4,7 @@ import React from 'react';
 
 // create a function to export a jumbotron component
 function Jumbotron(props) {
-  console.log(props);
+  
   return (
     
     <div className={`

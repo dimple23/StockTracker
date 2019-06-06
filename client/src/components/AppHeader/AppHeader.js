@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 
 //import './AppHeader.css';
-import { showToastifyAlert } from '../../utils/alertAPI';
+//import { showToastifyAlert } from '../../utils/alertAPI';
 
 
 
@@ -66,8 +66,7 @@ style={{
             
             <div 
               className={this.props.userLoggedIn ? "dropdown open btn btn-info" : ""}
-              className="  d-flex justify-content-end
-              "
+              
             >
 
                 {/* -------- LogIn Button ---------- */}
