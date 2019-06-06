@@ -42,7 +42,9 @@ function Jumbotron(props) {
       <NavLink to="/add" className="btn btn-outline-primary btn-lg m-2">
         Join
       </NavLink>
-      
+      <NavLink to="/add" className="btn btn-outline-primary btn-lg m-2">
+        Log out
+      </NavLink>
       
     </div>
   )

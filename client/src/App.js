@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Stocks from './pages/Stocks';
 import User from './pages/User';
-import StockNews from './components/StockNews';
+
 //import StockData from './components/StockData';
 //import userPage from './pages/userPage';
 
@@ -25,7 +25,7 @@ function App() {
 
           <Route render={() => <h1> 404 Error</h1>} />
         </Switch>
-        <StockNews/>
+        
        
         
       </div>
