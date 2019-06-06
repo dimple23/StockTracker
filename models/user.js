@@ -23,9 +23,13 @@ const UserSchema = new Schema({
 
   password: {
     type: String,
-  }
+  },
 
-  
+  savednewsArray: [{
+    ref: "news",
+    type: mongoose.Schema.Types.ObjectId,
+  }]
+
 });
 
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Jumbotron from '../components/Jumbotron';
 import Login from '../components/auth';
 import { registerUser } from "../utils/userAPIs";
-
+import { loginUser } from "../utils/userAPIs";
 
 
 //import Col from '../components/col';
@@ -57,8 +57,23 @@ class Saved extends Component {
     });
 
     return registerUser(this.state);
+    
   };
 
+  handleFormlogin = event => {
+    // Preventing the default behavior of the form submit (which is to refresh the page)
+    event.preventDefault();
+
+    // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
+    console.log(`Hello  ${this.state.email} ${this.state.password}`);
+    this.setState({
+      
+      email: "",
+      password: ""
+    });
+
+    return loginUser(this.state);
+  };
 
   render() {
     return (
@@ -73,7 +88,7 @@ class Saved extends Component {
           password={this.state.password}
           input={this.handleInputChange}
           submit={this.handleFormSubmit}
-
+          login={this.handleFormlogin}
         />
         
        
