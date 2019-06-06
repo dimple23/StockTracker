@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { userInfo } from 'os';
 
 // set up functions for talking to our backend
 
@@ -44,6 +45,13 @@ export const removeStock = (stockId) => {
   return axios.delete(`/api/stocks/${stockId}`);
 }
 
+export const registration = (userInfo) => {
+  return axios.post(`/api/registration/`, userInfo);
+}
+export const login = (userInfo) => {
+  return axios.post(`/api/login/`, userInfo);
+}
+
 // export all functions so if someone needs to import all they can
 export default {
   getAllStocks,
@@ -51,5 +59,7 @@ export default {
   createNewStock,
   updateStock,
   removeStock,
-  getApiData
+  getApiData,
+  registration,
+  login
 }

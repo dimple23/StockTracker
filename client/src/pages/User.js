@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Jumbotron from '../components/Jumbotron';
-import Row from '../components/Row';
+import Login from '../components/auth';
+
+
 import Col from '../components/col';
 import Card from '../components/Card';
 import { removeStock, createNewStock } from '../utils/API';
@@ -8,54 +10,69 @@ import { removeStock, createNewStock } from '../utils/API';
 
 class Saved extends Component {
   state = {
-    stockList: []
+    firstName: "",
+    email: "",
+    password: ""
   };
 
   componentDidMount() {
-    this.handleGetSavedStocks();
+    
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+    
+    signUpButton.addEventListener('click', () => {
+      container.classList.add("right-panel-active");
+    });
+    
+    signInButton.addEventListener('click', () => {
+      container.classList.remove("right-panel-active");
+    });
+
   }
+  
 
-  handleGetSavedStocks = () => {
-    createNewStock()
-      .then(({ data: stockList }) => {
-        this.setState({ stockList });
-      })
-      .catch(err => console.log(err));
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    const { name, value } = event.target;
+
+    // Updating the input's state
+    this.setState({
+      [name]: value
+    });
   };
 
-  handleRemoveStock = stockId => {
-    removeStock(stockId)
-      .then(this.handleGetSavedStocks)
-      .catch(err => console.log(err));
+  handleFormSubmit = event => {
+    // Preventing the default behavior of the form submit (which is to refresh the page)
+    event.preventDefault();
+
+    // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
+    console.log(`Hello ${this.state.firstName} ${this.state.email} ${this.state.password}`);
+    this.setState({
+      firstName: "",
+      email: "",
+      password: ""
+    });
   };
+
 
   render() {
     return (
       <React.Fragment>
         <Jumbotron fluid bg={'dark'} color={'light'} pageTitle={'Saved Stocks'} />
-        <div className="container-fluid">
         
-      
-          <Row>
-            {!this.state.stockList.length ? (
-              <h2 className="text-center">No saved stots, yet.</h2>
-            ) : (
-              this.state.stockList.map(stock => {
-                return (
-                  <Col key={stock._id} md={4}>
-                    <Card title={stock.title} image={stock.image ? stock.image : undefined}>
-                      <small className="text-muted">{`By: ${stock.authors.join(', ')}`}</small>
-                      <p>{stock.description}</p>
-                      <button onClick={() => this.handleRemoveStock(stock._id)} className="btn btn-danger btn-sm">
-                        Remove Stock
-                      </button>
-                    </Card>
-                  </Col>
-                );
-              })
-            )}
-          </Row>
-        </div>
+
+        <Login 
+
+        name={this.state.firstName}
+        email={this.state.email}
+        password={this.state.password}
+        input={this.handleInputChange}
+        submit={this.handleFormSubmit}
+        
+        />
+        
+       
       </React.Fragment>
     );
   }
