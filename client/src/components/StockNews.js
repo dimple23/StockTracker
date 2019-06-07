@@ -5,7 +5,7 @@ import {
 } from 'reactstrap';
 
 //import Save from '../pages/save';
-import { removenews, getSavednews, createSavednews } from '../utils/API';
+import { removenews, createSavednews } from '../utils/API';
 
 
 
@@ -27,15 +27,17 @@ class StockNews extends Component {
 
         createSavednews(article)
           .then(({data: dbNews}) => {
-            console.log("dbNews-------------");
+            
             console.log(dbNews)
           })
          
       };
     
     
-      handleRemovenews = article => {
-        removenews(article)
+      handleRemovenews = newsid => {
+          console.log("delete function--------");
+          console.log(newsid);
+        removenews(newsid)
           .then(this.handleGetSavednews)
           .catch(err => console.log(err));
       };
@@ -84,12 +86,13 @@ class StockNews extends Component {
                     <ListGroup id="news" className="stock-chart">
                         
                           <h1 className="text-center tab- table-info "> Business-News </h1>
-                        {news.map((article) => (
+                        {
+                            news.map((article) => (
                             <ListGroupItem key={article.title} className="news-item"><br/>
                                 <a href={article.url}><br/>
                                     {article.title} - <br/> {article.author} </a><br/>
                                     <p>{article.description} </p>
-                                    <button onClick={() => this.handleRemovenews()} className="btn btn-info btn-sm">
+                                    <button onClick={() => this.handleRemovenews(news._id)} className="btn btn-info btn-sm">
                                         Remove news
                                     </button>
                                     <button onClick={() => this.handleGetSavednews(article)} className="btn btn-info btn-sm">

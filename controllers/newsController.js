@@ -1,4 +1,4 @@
-const { News, Users } = require('../models');
+const { News, User } = require('../models');
 
 // this runs when GET /api/books is hit
 //const news = require('../models').news;
@@ -19,7 +19,7 @@ const getSavednews = async (req, res) => {
 
   console.log("Inside GET '/api/news' -> getSavednews");
 
-  res.json()
+  
 
   // const [userErr, userData] = await handle(User.findById(req._id));
 
@@ -60,7 +60,7 @@ const getSavednews = async (req, res) => {
 async function pushToSavednewsArray(req, res) {
 
   console.log("Inside pushToSavednewsArray()");
-  console.log(req.body);
+
   // Update User table with news id of the current saved news
   const [newsErr, newsData] = await handle(News.create(req.body));
 
@@ -71,8 +71,8 @@ async function pushToSavednewsArray(req, res) {
   if (newsErr) {
     return res.json(newsErr);
   }
-  console.log("")
-  return Users.findOneAndUpdate({
+
+  return User.findOneAndUpdate({
       _id: req._id
     }, {
       $push: {
@@ -96,65 +96,16 @@ async function pushToSavednewsArray(req, res) {
 
 
 // this will run when DELETE /api/books/:id is hit
-const removenews = async (req, res) => {
-
-  console.log("Inside DELETE '/api/news' -> removenews");
-
-  const userID = req._id;
-  const newsIdToBeDeleted = req.body.newsId;
-  console.log("req.id: " + userID);
-  console.log("req.body.newsId: " + newsIdToBeDeleted);
-
-
-  // Delete the newsId from 'savednewsArray' in User collection
-  const [userErr, userData] = await handle(User.findById(userID));
-
-  if (userErr) {
-    return res.json(500).json(userErr);
-  }
-
-  const newSavednewsArray = userData.savednewsArray;
-  newSavednewsArray.splice(newSavednewsArray.indexOf(newsIdToBeDeleted), 1);
-
-
-
-  User.findByIdAndUpdate(userID, {
-    savednewsArray: newSavednewsArray
-  }, (error, user) => {
-
-    if (error) {
-      return res.status(500).json({
-        success: false,
-        message: "Error updating new data."
-      });
-    }
-
-
-    // Delete document from news collection -------------------
-    news.findByIdAndRemove(newsIdToBeDeleted, (err, newsData) => {
-
-      if (err) {
-        return res.status(500).json({
-          success: false,
-          message: "Error deleting news."
-        });
-      }
-
-      console.log("newsData after deletion: ");
-      console.log(newsData);
-
-      return res.status(200).json({
-        success: true,
-        message: "news successfully deleted!"
-      });
-
+const removenews = (req, res) => {
+  News.remove({
+    _id: req.params.id
+  })
+    .then(dbnewsData => res.json(dbnewsData))
+    .catch(err => {
+      console.log(err);
+      res.json(err);
     });
-
-    return true;
-  });
-
-  return true; 
-} // End of deleteSavednews()
+};
 
 
 

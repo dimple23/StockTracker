@@ -21,6 +21,12 @@ router
   .get(withAuth, getSavednews)
   .delete(withAuth,removenews)
 
+  
+  // DELETE at /api/books/:id
+router
+.route('/:id')
+.delete(removenews);
+
 // router
 // .route('/news')
 // .post(getSavednews)
