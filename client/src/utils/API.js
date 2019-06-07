@@ -8,7 +8,7 @@ import axios from 'axios';
 export const getApiData = () => {
   return axios.get('/api/api-stocks')
 }
-// getAllNews
+// getAllNews //get news from external api
 export const getAllNews = () => {
   return axios.get('/api/api-news')
 }
@@ -33,6 +33,20 @@ export const createNewStock = (stockInfo) => {
   return axios.post('/api/stocks', stockInfo)
 }
 
+//this saved an article for the current user
+export const createSavednews = (newsInfo) => {
+  return axios.post('/api/api-news/', newsInfo);
+};
+
+//this gets saved news for current user
+export const getSavednews = () => {
+  return axios.get('/api/api-news/');
+};
+
+export const removenews = newsId => {
+  return axios.delete(`/api/api-news/news/${newsId}`);
+};
+
 // updateStock
 // takes in object => {code: "code", date: "date"} AND stock's id
 export const updateStock = (stockId, stockInfo) => {
@@ -54,6 +68,7 @@ export const login = (userInfo) => {
 
 // export all functions so if someone needs to import all they can
 export default {
+  getSavednews,
   getAllStocks,
   getStockById,
   createNewStock,
@@ -61,5 +76,6 @@ export default {
   removeStock,
   getApiData,
   registration,
-  login
+  login,
+  removenews
 }

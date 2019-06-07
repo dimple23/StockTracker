@@ -2,14 +2,45 @@
 const router = require('express').Router();
 const {
   getAllNews,
-  
-} = require('../../controllers/newsApiController');
+  getSavednews,
+  removenews,
+  pushToSavednewsArray
+} = require('../../controllers/newsController');
+const withAuth = require('../../middleware/authentication');
 
 //define routes
 //GET & POST routes 
 
+// router
+// .route('/')
+// .get(getAllNews)
+
 router
-.route('/')
-.get(getAllNews)
+  .route("/")
+  .post(withAuth, pushToSavednewsArray)
+  .get(withAuth, getSavednews)
+  .delete(withAuth,removenews)
+
+// router
+// .route('/news')
+// .post(getSavednews)
+
+// router
+// .route(`/api/news/${newsId}`)
+// .delete(removenews)
+
+// router
+//   .route('/')
+//   .get(getAllNews)
+//   .post(getSavednews);
+
+// // GET/PUT/DELETE routes for /api/notes/:id
+// router
+//   .route('/:id')
+//   .get(getnewsById)
+//   .delete(removenews);
+
+
+
 
 module.exports=router

@@ -4,14 +4,41 @@ import {
     ListGroupItem
 } from 'reactstrap';
 
+//import Save from '../pages/save';
+import { removenews, getSavednews, createSavednews } from '../utils/API';
+
+
 
 import axios from 'axios';
+
+
+
 
 
 class StockNews extends Component {
     state = {
         news: []
     };
+
+
+    handleGetSavednews = (article) => {
+        console.log("article: --------");
+        console.log(article);
+
+        createSavednews(article)
+          .then(({data: dbNews}) => {
+            console.log("dbNews-------------");
+            console.log(dbNews)
+          })
+         
+      };
+    
+    
+      handleRemovenews = article => {
+        removenews(article)
+          .then(this.handleGetSavednews)
+          .catch(err => console.log(err));
+      };
 
     addHeadlines = (articles) => {
         articles.forEach((article) => {
@@ -45,7 +72,7 @@ class StockNews extends Component {
 
 
     render() {
-
+        console.log(this.state)
         const { news } = this.state;
 
         if (news.length <= 0) {
@@ -55,18 +82,28 @@ class StockNews extends Component {
         return (
           
                     <ListGroup id="news" className="stock-chart">
-                          <h1 className="text-center tab- table-info "> News </h1>
+                        
+                          <h1 className="text-center tab- table-info "> Business-News </h1>
                         {news.map((article) => (
-                            <ListGroupItem key={article.title} className="news-item">
-                                <a href={article.url}>
-                                    {article.title} -  {article.author} </a>
-                                    <small>{article.description} </small>
+                            <ListGroupItem key={article.title} className="news-item"><br/>
+                                <a href={article.url}><br/>
+                                    {article.title} - <br/> {article.author} </a><br/>
+                                    <p>{article.description} </p>
+                                    <button onClick={() => this.handleRemovenews()} className="btn btn-info btn-sm">
+                                        Remove news
+                                    </button>
+                                    <button onClick={() => this.handleGetSavednews(article)} className="btn btn-info btn-sm">
+                                        Save news
+                                    </button>
                             </ListGroupItem>
+                            
                         ))
+                        
                         }
                     </ListGroup>
-
+                
         );
+        
     }
 }
 
