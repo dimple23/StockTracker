@@ -1,15 +1,15 @@
 .cBgImage {
-  /* background-image: url("./images/GoSmartBgImage.jpg"); */
+  
   background-attachment: fixed;
   background-position: center;
   background-blend-mode: multiply;
   background-size: cover;
   z-index: 0;
-  /* position: relative; */
+  
   width: 100%;
-  height: 400px;
+  height: 570px;
   display: flex;
   flex-direction: column;
-  /* min-height: 85vh; */
+  
   margin-top: 0;
 }
