@@ -65,8 +65,8 @@ class Stocks extends Component {
       <React.Fragment>
         <Jumbotron
           fluid
-          text={"light"}
-          pageTitle={"Stocks Tracker"} />
+          text={"info"}
+          pageTitle={"STOCK MARKET NEWS"} />
         {/* <h1> {Object.keys(this.state.stockapikeys).length ? this.state.stockapikeys["Time Series (Daily)"]["1. Information"] : ""} </h1> */}
         {/* {console.log(this.state.stockapikeys)} */}
 

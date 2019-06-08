@@ -43,8 +43,8 @@ export const getSavednews = () => {
   return axios.get('/api/api-news/');
 };
 
-export const removenews = newsId => {
-  return axios.delete(`/api/api-news/${newsId}`);
+export const removenews = articleid => {
+  return axios.delete(`/api/api-news/${articleid}`);
 };
 
 // updateStock

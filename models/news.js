@@ -3,6 +3,9 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const newsSchema = new Schema({
+  newsId: {
+    type: String
+  },
   source: {
     type: String
   },
