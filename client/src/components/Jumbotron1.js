@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import Logout from './Logout';
 
 function Jumbotron(props) {
   return (
@@ -21,9 +22,12 @@ function Jumbotron(props) {
           
           
           <div >
-            <NavLink to="/" className="btn btn-warning btn-lg">
-              Home
+
+            <NavLink to="/" className="fas fa-chart-line fa-3x float-left ">
             </NavLink>
+
+            {/* <i className="fas fa-chart-line"></i> */}
+          <Logout />
           </div>
         </div>
       

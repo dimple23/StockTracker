@@ -11,10 +11,6 @@ import { removenews, createSavednews } from '../utils/API';
 
 import axios from 'axios';
 
-
-
-
-
 class StockNews extends Component {
     state = {
         news: []
