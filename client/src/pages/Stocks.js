@@ -40,16 +40,16 @@ class Stocks extends Component {
     
   }
 
-  // handleGetApiData = () => {
-  //   getApiData().then(({ data }) => {
-  //     data = Object.keys(data).map(function (key) {
-  //       return [Number(key), data[key]];
-  //     });
-  //     this.setState({ stockapikeys: data })
-  //   } )
+  handleGetApiData = () => {
+    getApiData().then(({ data }) => {
+      data = Object.keys(data).map(function (key) {
+        return [Number(key), data[key]];
+      });
+      this.setState({ stockapikeys: data })
+    } )
 
 
-  // }
+  }
 
   getNews = () => {
     getAllNews().then(({ data }) => this.setState({ newsapikeys: data }))
