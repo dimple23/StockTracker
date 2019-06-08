@@ -5,7 +5,7 @@ import {
 } from 'reactstrap';
 
 //import Save from '../pages/save';
-import { removenews, createSavednews,getAllNews } from '../utils/API';
+import { removenews, createSavednews } from '../utils/API';
 
 
 
@@ -17,28 +17,15 @@ import axios from 'axios';
 
 class StockNews extends Component {
     state = {
-        news: [],
-        getNews:[]
+        news: []
     };
 
 
-    getAllNews = (NewsId) => {
-        console.log("hello: --------");
-        console.log(NewsId);
-
-        createSavednews(NewsId)
-          .then(({data: dbNews}) => {
-            
-            console.log(dbNews)
-          })
-         
-      };
-
-    handleGetSavednews = (NewsId) => {
+    handleGetSavednews = (article) => {
         console.log("article: --------");
-        console.log(NewsId);
+        console.log(article);
 
-        createSavednews(NewsId)
+        createSavednews(article)
           .then(({data: dbNews}) => {
             
             console.log(dbNews)
@@ -47,16 +34,16 @@ class StockNews extends Component {
       };
     
     
-      handleRemovenews = (NewsId) => {
+      handleRemovenews = (article) => {
           console.log("delete function--------");
-          console.log(NewsId);
-        removenews(NewsId)
+          console.log(article);
+        removenews(article)
           .then(this.handleGetSavednews)
           .catch(err => console.log(err));
       };
 
-    addHeadlines = (NewsId) => {
-        NewsId.forEach((article) => {
+    addHeadlines = (articles) => {
+        articles.forEach((article) => {
 
             let newArticle = {
                 source: article.source.name,
@@ -100,15 +87,15 @@ class StockNews extends Component {
                         
                           <h1 className="text-center tab- table-info "> Business-News </h1>
                         {
-                            news.map((news) => (
-                            <ListGroupItem key={news.id} className="news-item"><br/>
-                                <a href={news.url}><br/>
-                                    {news.title} - <br/> {news.author} </a><br/>
-                                    <p>{news.description} </p>
-                                    <button onClick={() => this.handleRemovenews(news._id)} className="btn btn-info btn-sm">
+                            news.map((article) => (
+                            <ListGroupItem key={article.title} className="news-item"><br/>
+                                <a href={article.url}><br/>
+                                    {article.title} - <br/> {article.author} </a><br/>
+                                    <p>{article.description} </p>
+                                    <button onClick={() => this.handleRemovenews(article)} className="btn btn-info btn-sm">
                                         Remove news
                                     </button>
-                                    <button onClick={() => this.handleGetSavednews(news)} className="btn btn-info btn-sm">
+                                    <button onClick={() => this.handleGetSavednews(article)} className="btn btn-info btn-sm">
                                         Save news
                                     </button>
                             </ListGroupItem>

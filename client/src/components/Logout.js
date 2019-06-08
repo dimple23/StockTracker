@@ -24,7 +24,7 @@ class Logout extends Component {
       return (<Redirect to='/' />);
     }
     else {
-      return (<Link className="btn btn-warning" to='/add' onClick={this.handleLogout}
+      return (<Link className="btn btn-warning" to='/' onClick={this.handleLogout}
       
       >Logout</Link>);
     }
