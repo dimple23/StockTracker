@@ -34,17 +34,17 @@ export const createNewStock = (stockInfo) => {
 }
 
 //this saved an article for the current user
-export const createSavednews = (newsInfo) => {
-  return axios.post('/api/api-news/', newsInfo);
+export const createSavednews = (article) => {
+  return axios.post('/api/api-news/', article);
 };
 
 //this gets saved news for current user
-export const getSavednews = () => {
-  return axios.get('/api/api-news/');
+export const getSavednews = (article) => {
+  return axios.get('/api/api-news/',article);
 };
 
-export const removenews = articleid => {
-  return axios.delete(`/api/api-news/${articleid}`);
+export const removenews = (article)=> {
+  return axios.delete(`/api/api-news/${article}`);
 };
 
 // updateStock

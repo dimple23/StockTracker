@@ -32,7 +32,6 @@ function Jumbotron(props) {
       {/* <NavLink to="/" className="btn btn-outline-dark btn-lg m-2">
         View All Stocks
       </NavLink>
-
       <NavLink to="/add" className="btn btn-outline-warning btn-lg m-2">
         Add A New Stock
       </NavLink>
@@ -49,11 +48,11 @@ function Jumbotron(props) {
 
      
 
-          {/* <NavLink to="/saved" className="btn btn-outline-primary btn-lg m-2"
+          { <NavLink to="/saved" className="btn btn-outline-primary btn-lg m-2"
       // style={{ 'display:none' }}
       >
         Saved News
-      </NavLink>   */}
+      </NavLink>   }
     </div>
   )
 }

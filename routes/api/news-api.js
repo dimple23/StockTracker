@@ -19,7 +19,7 @@ router
   .route("/")
   .post(withAuth, pushToSavednewsArray)
   .get(withAuth, getSavednews)
-  .delete(withAuth,removenews)
+
 
   
   // DELETE at /api/books/:id
