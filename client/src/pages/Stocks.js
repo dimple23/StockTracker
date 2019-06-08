@@ -37,6 +37,7 @@ class Stocks extends Component {
       stockapikeys: data["Time Series (Daily)"][m],
       yesterdaystock: data["Time Series (Daily)"][yesterday]
     }));
+    
   }
 
   // handleGetApiData = () => {

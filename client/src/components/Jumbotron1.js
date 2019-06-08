@@ -9,7 +9,7 @@ function Jumbotron(props) {
         jumbotron
        
         bg-${props.bg || 'default'}
-        text-${props.color || 'dark'}
+        text-${props.color || 'light'}
         text-center
         `}>
      
@@ -23,7 +23,7 @@ function Jumbotron(props) {
           
           <div >
 
-            <NavLink to="/" className="fas fa-chart-line fa-3x float-left ">
+            <NavLink to="/" className="fas fa-chart-line fa-3x float-left  ">
             </NavLink>
 
             {/* <i className="fas fa-chart-line"></i> */}

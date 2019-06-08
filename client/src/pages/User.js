@@ -89,7 +89,8 @@ class Saved extends Component {
 
     return (
       <React.Fragment>
-        <Jumbotron fluid bg={'dark'} color={'light'} pageTitle={'Saved Stocks'} isLoggedIn={this.state.isLoggedIn}/>
+        <Jumbotron fluid bg={'dark'} color={'light'} pageTitle={'SIGN IN/UP'} isLoggedIn={this.state.isLoggedIn}/>
+         {/* {this.props.isLoggedIn? 'Logout' : 'Login'} */}
         
 
         <Login 
