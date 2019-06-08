@@ -83,8 +83,8 @@ class Saved extends Component {
   };
 
   render() {
-    if (this.state.isLoggedIn) {
-      return <Redirect to="/saved" />
+  if (this.state.isLoggedIn) {
+      return <Redirect to="/" />
     }
 
     return (

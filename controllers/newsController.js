@@ -1,4 +1,4 @@
-const { News, User } = require('../models');
+const { News, Users } = require('../models');
 
 // this runs when GET /api/books is hit
 //const news = require('../models').news;
@@ -72,7 +72,7 @@ async function pushToSavednewsArray(req, res) {
     return res.json(newsErr);
   }
 
-  return User.findOneAndUpdate({
+  return Users.findOneAndUpdate({
       _id: req._id
     }, {
       $push: {

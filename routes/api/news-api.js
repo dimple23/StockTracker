@@ -23,9 +23,9 @@ router
 
   
   // DELETE at /api/books/:id
-router
-.route('/:id')
-.delete(removenews);
+// router
+// .route('/:id')
+// .delete(removenews);
 
 // router
 // .route('/news')
