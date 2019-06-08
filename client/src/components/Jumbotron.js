@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Logout from './Logout'
+
 //import './App.css';
 
 // create a function to export a jumbotron component
@@ -40,22 +40,20 @@ function Jumbotron(props) {
        Sign In
       </NavLink> */}
 
-      <NavLink to="/add" className="btn btn-outline-primary btn-lg m-2"
-      // style={{ 'display:none' }}
-      >
+      <NavLink to="/add" className="btn btn-outline-primary btn-lg m-2"  >
         Join
       </NavLink>
 
       {/* <Link to="/saved/profile">Profile</Link>
       <Logout updateUser={this.props.updateUser} /> */}
 
-      <Logout/>
+     
 
-          <NavLink to="/saved" className="btn btn-outline-primary btn-lg m-2"
+          {/* <NavLink to="/saved" className="btn btn-outline-primary btn-lg m-2"
       // style={{ 'display:none' }}
       >
         Saved News
-      </NavLink>  
+      </NavLink>   */}
     </div>
   )
 }

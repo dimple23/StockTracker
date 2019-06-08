@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Jumbotron from '../components/Jumbotron1';
+
 import Row from '../components/Row1';
 import Col from '../components/Col1';
 import Card from '../components/Card1';
@@ -52,7 +53,7 @@ class Saved extends Component {
 render() {
   return (
     <React.Fragment>
-      <Jumbotron fluid bg={'dark'} color={'light'} pageTitle={'Viewing Saved News'} />
+      <Jumbotron fluid bg={'dark'} color={'info'} pageTitle={'Viewing Saved News'} />
       <div className="container-fluid">
         <Row>
           {!this.state.news.length ? (

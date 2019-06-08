@@ -64,6 +64,7 @@ class Stocks extends Component {
     return (
       <React.Fragment>
         <Jumbotron
+        
           fluid
           text={"info"}
           pageTitle={"STOCK MARKET NEWS"} />
@@ -91,7 +92,7 @@ class Stocks extends Component {
 
           // }
         ]}} />
-        <StockNews/>
+        <StockNews />
       </React.Fragment>
     )
   }
