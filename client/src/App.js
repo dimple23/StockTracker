@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Stocks from './pages/Stocks';
-import User from './pages/User';
+import User from './pages/User/User';
 import Saved from './pages/Saved';
 
 //import Save from './pages/save';

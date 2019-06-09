@@ -21,39 +21,39 @@ const getSavednews = async (req, res) => {
 
   
 
-  // const [userErr, userData] = await handle(User.findById(req._id));
+  const [userErr, userData] = await handle(Users.findById(req._id));
 
-  // if (userErr) {
-  //   return res.json(500).json(userErr);
-  // }
+  if (userErr) {
+    return res.json(500).json(userErr);
+  }
 
-  // // Get all the news Ids from 'savednewsArray[]' that are related to the particular user
-  // const newsIds = userData.savednewsArray;
-  // // console.log("newsIds: " + newsIds);
+  // Get all the news Ids from 'savednewsArray[]' that are related to the particular user
+  const newsIds = userData.savednewsArray;
+  // console.log("newsIds: " + newsIds);
 
-  // const arrayOfnewsData = [];
+  const arrayOfnewsData = [];
 
-  // const start = async () => {
+  const start = async () => {
 
-  //   await asyncForEach(newsIds, async (newsId) => {
+    await asyncForEach(newsIds, async (newsId) => {
 
-  //     const [newsErr, newsData] = await handle(News.create(req.body));
+      const [newsErr, newsData] = await handle(News.findById(newsId));
 
-  //     if (newsErr) {
-  //       return res.json(500).json(newsErr);
-  //     }
+      if (newsErr) {
+        return res.json(500).json(newsErr);
+      }
 
-  //     return arrayOfnewsData.push(newsData);
+      return arrayOfnewsData.push(newsData);
 
-  //   })
+    })
 
-  //   // console.log(arrayOfnewsData);
-  //   return res.status(200).json(arrayOfnewsData);
-  // }
+    // console.log(arrayOfnewsData);
+    return res.status(200).json(arrayOfnewsData);
+  }
 
-  // start();
+  start();
 
-  // return true;
+  return true;
 };
 
 

@@ -12,7 +12,7 @@ console.log("secret: " + secret);
 
 const register = (req, res) => {
 
-  console.log("Inside user-controller -> POST '/api/user/register' -> register");
+  console.log("Inside user-controller -> POST '/api/users/register' -> register");
   console.log(req.body);
 
   // Users.save(req.body)
@@ -32,10 +32,10 @@ const login = async (req, res) => {
   const { email, password } = req.body;
 
   // find user based on email
-  const [findUserErr, userInfo] = await handle(Users.findOne({ email }));
+  const [findUsersErr, userInfo] = await handle(Users.findOne({ email }));
 
-  if (findUserErr) {
-    console.log(findUserErr);
+  if (findUsersErr) {
+    console.log(findUsersErr);
     res.status(500).json({
       error: "Internal error, try again"
     });

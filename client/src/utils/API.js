@@ -39,12 +39,12 @@ export const createSavednews = (article) => {
 };
 
 //this gets saved news for current user
-export const getSavednews = (article) => {
-  return axios.get('/api/api-news/',article);
+export const getSavednews = () => {
+  return axios.get('/api/api-news/');
 };
 
-export const removenews = (article)=> {
-  return axios.delete(`/api/api-news/${article}`);
+export const removenews = articleid => {
+  return axios.delete(`/api/api-news/${articleid}`);
 };
 
 // updateStock

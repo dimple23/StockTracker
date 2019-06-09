@@ -88,9 +88,7 @@ class StockNews extends Component {
                                 <a href={article.url}><br/>
                                     {article.title} - <br/> {article.author} </a><br/>
                                     <p>{article.description} </p>
-                                    <button onClick={() => this.handleRemovenews(article)} className="btn btn-info btn-sm">
-                                        Remove news
-                                    </button>
+                                    
                                     <button onClick={() => this.handleGetSavednews(article)} className="btn btn-info btn-sm">
                                         Save news
                                     </button>

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Redirect} from 'react-router-dom';
-import Jumbotron from '../components/Jumbotron';
-import Login from '../components/auth';
-import { registerUser } from "../utils/userAPIs";
-import { loginUser } from "../utils/userAPIs";
+import Jumbotron from '../../components/Jumbotron/Jumbotron';
+import Login from '../../components/auth';
+import { registerUser } from "../../utils/userAPIs";
+import { loginUser } from "../../utils/userAPIs";
 
 
 //import Col from '../components/col';
