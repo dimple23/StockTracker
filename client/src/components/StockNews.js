@@ -78,6 +78,13 @@ class StockNews extends Component {
             this.getNews(news);
         }
 
+        console.log(this.state)
+        const{ button } =this.state;
+
+        if(this.state.islogin){
+            return true;
+        }
+
         return (
           
                     <ListGroup id="news" className="stock-chart">
@@ -90,7 +97,7 @@ class StockNews extends Component {
                                     {article.title} - <br/> {article.author} </a><br/>
                                     <p>{article.description} </p>
                                     
-                                    <button onClick={() => this.handleGetSavednews(article)}   className="btn btn-info btn-sm"  >
+                                    <button id="button" onClick={() => this.handleGetSavednews(article)}   className="btn btn-info btn-sm"  >
                                         Save news
                                     </button>
                             </ListGroupItem>

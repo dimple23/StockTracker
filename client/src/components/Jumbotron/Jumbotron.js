@@ -53,6 +53,19 @@ function Jumbotron(props) {
       >
         Saved News
       </NavLink>   }
+
+      <button class="fab fa-apple btn btn-outline-primary btn-lg m-2"> <a href="https://itunes.apple.com/us/app/stock-tracker-real-time-stocks/id517166254?mt=8">
+							
+					 
+				 App Store
+					</a>
+				</button>
+        <button class="fab fa-github btn btn-outline-primary btn-lg m-2"> <a href="https://github.com/dimple23/StockTracker">
+							
+					 
+             github
+               </a>
+             </button>
     </div>
   )
 }
