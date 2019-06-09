@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import Jumbotron from '../components/Jumbotron/Jumbotron1';
 
 import Row from '../components/Row/Row1';
-import Col from '../components/Col/Col1';
-import Card from '../components/Card/Card1';
-// import {
-//     ListGroup,
-//     ListGroupItem
-// } from 'reactstrap';
+//import Col from '../components/Col/Col1';
+//import Card from '../components/Card/Card1';
+import {
+    
+    ListGroupItem
+} from 'reactstrap';
 // import { NavLink } from 'react-router-dom';
 
 //import Save from '../pages/save';
@@ -47,7 +47,7 @@ class Saved extends Component {
   render() {
     return (
       <React.Fragment>
-        <Jumbotron fluid bg={'dark'} color={'light'} pageTitle={'Viewing Saved News'} />
+        <Jumbotron fluid bg={'dark'} color={'light'} pageTitle={'Viewing Saved Books'} />
         <div className="container-fluid">
           <Row>
             {!this.state.savednewsArray.length ? (
@@ -55,18 +55,19 @@ class Saved extends Component {
             ) : (
               this.state.savednewsArray.map(article => {
                 return (
-                  <Col key={article.title} md={4}>
+                 
                     
-                    <Card 
-                    title={article.title}>
-                     
-                      <small className="text-muted">{`By: ${article.authors}`}</small>
-                      <p>{article.description}</p>
-                      <button onClick={() => this.handleRemovenews(article._id)} className="btn btn-danger btn-sm">
-                        Remove news
-                      </button>
-                    </Card>
-                  </Col>
+                    <ListGroupItem className="news-item"><br/>
+                                <a href={article.url}><br/>
+                                    {article.title} - <br/> {article.author} </a><br/>
+                                    <p>{article.description} </p>
+                                    
+                                    <button onClick={() => this.handleGetSavednews(article)} className="btn btn-info btn-sm">
+                                        Save news
+                                    </button>
+                            </ListGroupItem>
+                            
+                 
                 );
               })
             )}
