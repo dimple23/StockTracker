@@ -114,23 +114,23 @@ const removenews = async (req, res) => {
   console.log("Inside DELETE '/api/api-news' -> deleteSavednews");
 
   const newsId = req._id;
-  const newsIdToBeDeleted = req.body.newsId;
+  const newsIdToBeDeleted = req.params._id;
   console.log("req.id: " + newsId);
-  console.log("req.body.newsId: " + newsIdToBeDeleted);
+  console.log("req.params.id: " + newsIdToBeDeleted);
 
 // Delete the newsId from 'savednewsArray' in User collection
-const [newsErr, newsData] = await handle(News.findById(newsId));
+const [newsErr, newsData] = await handle(Users.findById(newsId));
 
 if (newsErr) {
   return res.json(500).json(newsErr);
 }
 
-const newSavednewsArray = newsData.newsId;
+const newSavednewsArray = newsData.savednewsArray;
 newSavednewsArray.splice(newSavednewsArray.indexOf(newsIdToBeDeleted), 1);
 
 
 
-News.findByIdAndUpdate(newsId, {
+Users.findByIdAndUpdate(newsId, {
   savednewsArray: newSavednewsArray
 }, (error, news) => {
 
