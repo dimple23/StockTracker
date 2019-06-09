@@ -67,7 +67,7 @@ class Stocks extends Component {
         
           fluid
           text={"info"}
-          pageTitle={"STOCK MARKET NEWS"} />
+          pageTitle={"STOCK MARKET DASHBOARD"} />
         {/* <h1> {Object.keys(this.state.stockapikeys).length ? this.state.stockapikeys["Time Series (Daily)"]["1. Information"] : ""} </h1> */}
         {/* {console.log(this.state.stockapikeys)} */}
 

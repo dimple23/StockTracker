@@ -11,7 +11,16 @@ function Jumbotron(props) {
         bg-${props.bg || 'default'}
         text-${props.color || 'light'}
         text-center
-        `}>
+        `}
+        style={{  
+          backgroundImage: "url(../../../assets/img/footer-bg-swirl.jpg)",
+          backgroundPosition: 'bottom',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          
+          
+          
+        }}>
      
         <div className="row justify-content-center">
           <div className="col-12">

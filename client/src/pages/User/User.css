@@ -14,6 +14,9 @@
 	height: 100vh;
 	margin: -20px 0 50px;
 } */
+body{
+	background-color: whitesmoke;
+}
 
 h1 {
 	font-weight: bold;
@@ -65,8 +68,8 @@ button:focus {
 }
 
 button.ghost {
-	background-color: transparent;
-	border-color: #FFFFFF;
+	background-color: navy;
+	border-color:navy;
 }
 
 form {
@@ -159,9 +162,9 @@ input {
 }
 
 .overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background: mediumturquoise;
+	background: -webkit-linear-gradient(to right, mediumturquoise, mediumturquoise);
+	background: linear-gradient(to right, mediumturquoise, mediumturquoise);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -242,7 +245,7 @@ footer p {
 }
 
 footer i {
-    color: red;
+    color:mediumturquoise;
 }
 
 footer a {
