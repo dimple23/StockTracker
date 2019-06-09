@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Jumbotron from '../components/Jumbotron/Jumbotron1';
 
-import Row from '../components/Row/Row1';
+//import Row from '../components/Row/Row1';
 //import Col from '../components/Col/Col1';
 //import Card from '../components/Card/Card1';
 import {
@@ -49,7 +49,7 @@ class Saved extends Component {
       <React.Fragment>
         <Jumbotron fluid bg={'dark'} color={'light'} pageTitle={'Viewing Saved Books'} />
         <div className="container-fluid">
-          <Row>
+          
             {!this.state.savednewsArray.length ? (
               <h2 className="text-center">No saved News, yet.</h2>
             ) : (
@@ -63,7 +63,7 @@ class Saved extends Component {
                                     <p>{article.description} </p>
                                     
                                     <button onClick={() => this.handleGetSavednews(article)} className="btn btn-info btn-sm">
-                                        Save news
+                                        Delete news
                                     </button>
                             </ListGroupItem>
                             
@@ -71,7 +71,7 @@ class Saved extends Component {
                 );
               })
             )}
-          </Row>
+        
         </div>
       </React.Fragment>
     );

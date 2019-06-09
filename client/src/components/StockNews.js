@@ -30,10 +30,10 @@ class StockNews extends Component {
       };
     
     
-      handleRemovenews = (article) => {
+      handleRemovenews = (articleId) => {
           console.log("delete function--------");
-          console.log(article);
-        removenews(article)
+          console.log(articleId);
+        removenews(articleId)
           .then(this.handleGetSavednews)
           .catch(err => console.log(err));
       };
