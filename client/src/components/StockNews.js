@@ -63,6 +63,7 @@ class StockNews extends Component {
             .then(news => {
                 const articles = news.data.articles.slice(0, 5);
                 this.addHeadlines(articles)
+                
             })
             .catch(err => console.log(err));
 
@@ -89,7 +90,7 @@ class StockNews extends Component {
                                     {article.title} - <br/> {article.author} </a><br/>
                                     <p>{article.description} </p>
                                     
-                                    <button onClick={() => this.handleGetSavednews(article)} className="btn btn-info btn-sm">
+                                    <button onClick={() => this.handleGetSavednews(article)}   className="btn btn-info btn-sm"  >
                                         Save news
                                     </button>
                             </ListGroupItem>

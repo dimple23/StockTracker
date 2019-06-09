@@ -62,7 +62,7 @@ class Saved extends Component {
                                     {article.title} - <br/> {article.author} </a><br/>
                                     <p>{article.description} </p>
                                     
-                                    <button onClick={() => this.handleGetSavednews(article)} className="btn btn-info btn-sm">
+                                    <button onClick={() => this.handleRemovenews(article._id)} className="btn btn-info btn-sm">
                                         Delete news
                                     </button>
                             </ListGroupItem>

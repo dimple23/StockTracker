@@ -95,18 +95,78 @@ async function pushToSavednewsArray(req, res) {
 }
 
 
-// this will run when DELETE /api/books/:id is hit
-const removenews = (req, res) => {
-  News.remove({
-    _id: req.params.id
-  })
-    .then(dbnewsData => res.json(dbnewsData))
-    .catch(err => {
-      console.log(err);
-      res.json(err);
-    });
-};
+// // this will run when DELETE /api/books/:id is hit
+// const removenews = (req, res) => {
+//   News.remove({
+//     _id: req.params.id
+//   })
+//     .then(dbnewsData => res.json(dbnewsData))
+//     .catch(err => {
+//       console.log(err);
+//       res.json(err);
+//     });
+// };
 
+
+// DELETE news for a user '/api/news'
+const removenews = async (req, res) => {
+
+  console.log("Inside DELETE '/api/api-news' -> deleteSavednews");
+
+  const newsId = req._id;
+  const newsIdToBeDeleted = req.body.newsId;
+  console.log("req.id: " + newsId);
+  console.log("req.body.newsId: " + newsIdToBeDeleted);
+
+// Delete the newsId from 'savednewsArray' in User collection
+const [newsErr, newsData] = await handle(News.findById(newsId));
+
+if (newsErr) {
+  return res.json(500).json(newsErr);
+}
+
+const newSavednewsArray = newsData.newsId;
+newSavednewsArray.splice(newSavednewsArray.indexOf(newsIdToBeDeleted), 1);
+
+
+
+News.findByIdAndUpdate(newsId, {
+  savednewsArray: newSavednewsArray
+}, (error, news) => {
+
+  if (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Error updating new data."
+    });
+  }
+
+
+  // Delete document from news collection -------------------
+  News.findByIdAndRemove(newsIdToBeDeleted, (err, newsData) => {
+
+    if (err) {
+      return res.status(500).json({
+        success: false,
+        message: "Error deleting news."
+      });
+    }
+
+    console.log("newsData after deletion: ");
+    console.log(newsData);
+
+    return res.status(200).json({
+      success: true,
+      message: "news successfully deleted!"
+    });
+
+  });
+
+  return true;
+});
+
+
+}
 
 
 

@@ -22,10 +22,10 @@ router
 
 
   
-  // DELETE at /api/books/:id
+  // DELETE at /api/api-news/:id
 router
 .route('/:id')
-.delete(removenews);
+.delete(withAuth,removenews)
 
 // router
 // .route('/news')
