@@ -78,6 +78,7 @@ class Saved extends Component {
       .then(() => {
         this.setState({
           isLoggedIn: true
+
         })
       })
   };
@@ -85,13 +86,18 @@ class Saved extends Component {
   render() {
   if (this.state.isLoggedIn) {
       return <Redirect to="/" />
+      
     }
+
+
 
     return (
       <React.Fragment>
         <Jumbotron fluid bg={'dark'} color={'light'} pageTitle={'SIGN IN/UP'} isLoggedIn={this.state.isLoggedIn}/>
          {/* {this.props.isLoggedIn? 'Logout' : 'Login'} */}
-        
+           
+
+           
 
         <Login 
 
@@ -103,8 +109,10 @@ class Saved extends Component {
           login={this.handleFormlogin}
         />
 
-            
+        
+         
       </React.Fragment>
+      
       
     );
   }

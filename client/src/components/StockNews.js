@@ -3,7 +3,7 @@ import {
     ListGroup,
     ListGroupItem
 } from 'reactstrap';
-
+//import Jumbo from './Jumbotron/Jumbo.css'
 //import Save from '../pages/save';
 import { removenews, createSavednews } from '../utils/API';
 
@@ -15,8 +15,9 @@ class StockNews extends Component {
     state = {
         news: []
     };
+    
 
-
+   
     handleGetSavednews = (article) => {
         console.log("article: --------");
         console.log(article);
@@ -63,13 +64,15 @@ class StockNews extends Component {
             .then(news => {
                 const articles = news.data.articles.slice(0, 5);
                 this.addHeadlines(articles)
+
+
                 
             })
             .catch(err => console.log(err));
 
     }
 
-
+    
     render() {
         console.log(this.state)
         const { news } = this.state;
@@ -77,13 +80,10 @@ class StockNews extends Component {
         if (news.length <= 0) {
             this.getNews(news);
         }
+       
 
-        console.log(this.state)
-        const{ button } =this.state;
+       
 
-        if(this.state.islogin){
-            return true;
-        }
 
         return (
           
