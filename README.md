@@ -25,8 +25,11 @@
 * real time changes when any other user adds or removes a stock
 * real time changes in currency for all countery   
 
-![stocktracker]()
+![stocktracker](https://github.com/dimple23/StockTracker/blob/master/client/screenshots/Screen%20Shot%202019-06-10%20at%206.57.56%20PM.png)
 
+![stocktracker](https://github.com/dimple23/StockTracker/blob/master/client/screenshots/Screen%20Shot%202019-06-10%20at%206.58.12%20PM.png)
+
+![stocktracker](https://github.com/dimple23/StockTracker/blob/master/client/screenshots/Screen%20Shot%202019-06-10%20at%206.58.30%20PM.png)
 
 
 ## Installation
