@@ -9,6 +9,7 @@ import StockNews from '../components/StockNews';
 
 class Stocks extends Component {
   state = {
+    isLoggedIn: false,
     stocklist: [],
     stockapikeys: [],
     newsapikeys: [],
@@ -22,6 +23,9 @@ class Stocks extends Component {
     this.handleGetApiData();
     this.getNews();
     this.handleOldData();
+    this.setState({
+      isLoggedIn: this.props.location.state ? this.props.location.state.isLoggedIn : false
+    })
   }
 
   //create method to get all 
@@ -68,7 +72,9 @@ class Stocks extends Component {
         
           fluid
           text={"info"}
-          pageTitle={"STOCK MARKET DASHBOARD"} />
+          pageTitle={"STOCK MARKET DASHBOARD"} 
+          isLoggedIn={this.state.isLoggedIn}
+          />
         {/* <h1> {Object.keys(this.state.stockapikeys).length ? this.state.stockapikeys["Time Series (Daily)"]["1. Information"] : ""} </h1> */}
         {/* {console.log(this.state.stockapikeys)} */}
 
@@ -94,7 +100,7 @@ class Stocks extends Component {
           // }
         ]}} />
         <CurrencyConverterContainer />
-        <StockNews />
+        <StockNews isLoggedIn={this.state.isLoggedIn}/>
       </React.Fragment>
     )
   }

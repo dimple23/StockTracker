@@ -13,9 +13,16 @@ import axios from 'axios';
 
 class StockNews extends Component {
     state = {
+        isLoggedIn: false,
         news: []
     };
     
+    componentDidMount() {
+        
+        this.setState({
+          isLoggedIn: this.props.isLoggedIn ? this.props.isLoggedIn : false
+        })
+      }
 
    
     handleGetSavednews = (article) => {
@@ -81,7 +88,7 @@ class StockNews extends Component {
             this.getNews(news);
         }
        
-
+        
        
 
 
@@ -97,9 +104,10 @@ class StockNews extends Component {
                                     {article.title} - <br/> {article.author} </a><br/>
                                     <p>{article.description} </p>
                                     
-                                    <button id="button" onClick={() => this.handleGetSavednews(article)}   className="btn btn-info btn-sm"  >
+                                    
+                                    { this.props.isLoggedIn ?   <button    id="button" onClick={() => this.handleGetSavednews(article)}   className="btn btn-info btn-sm"  >
                                         Save news
-                                    </button>
+                                    </button> :" "}
                             </ListGroupItem>
                             
                         ))

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Proptypes from 'prop-types';
+//import Proptypes from 'prop-types';
 import CurrencyInput from './CurrencyInput';
 import Money from 'js-money';
 
@@ -56,7 +56,7 @@ class CurrencyConverterContainer extends Component {
 
     render() {
         return (
-            <div>
+            <div >
                 <form className="currency-convert-form">
                     <h2>{HEADER_TEXT_PROP} {COUNTRY_TEXT}</h2>
 

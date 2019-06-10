@@ -48,11 +48,11 @@ function Jumbotron(props) {
 
      
 
-      { <NavLink to="/saved" className="btn btn-outline-primary btn-lg m-2"
+      { props.isLoggedIn ? (<NavLink to="/saved" className="btn btn-outline-primary btn-lg m-2"
       // style={{ 'display:none' }}
       >
         Saved News
-      </NavLink>   }
+      </NavLink> )  : "" }
 
         <button class="fab fa-github btn btn-outline-primary btn-lg m-2"> <a href="https://github.com/dimple23/StockTracker">
 							
