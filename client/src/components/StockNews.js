@@ -99,6 +99,7 @@ class StockNews extends Component {
                     <ListGroup id="news" className="stock-chart text-info news" >
                         
                           <h1 className="text-center tab- table-info "> Business-News </h1>
+                          <strong>
                         {
                             news.map((article) => (
                             <ListGroupItem key={article.title} className="news-item"><br/>
@@ -106,15 +107,17 @@ class StockNews extends Component {
                                     {article.title} - <br/> {article.author} </a><br/>
                                     <p>{article.description} </p>
                                     
-                                    
+                                
                                     { this.props.isLoggedIn ?   <button    id="button" onClick={() => this.handleGetSavednews(article)}   className="btn btn-info btn-sm"  >
                                         Save news
                                     </button> :" "}
+                                   
                             </ListGroupItem>
                             
                         ))
-                        
+                       
                         }
+                         </strong>
                     </ListGroup>
                 
         );

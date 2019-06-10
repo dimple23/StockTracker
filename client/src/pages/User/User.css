@@ -15,7 +15,7 @@
 	margin: -20px 0 50px;
 } */
 body{
-	background-color: whitesmoke;
+	background: linear-gradient(90deg, aqua  0%,black 100%);
 }
 
 h1 {

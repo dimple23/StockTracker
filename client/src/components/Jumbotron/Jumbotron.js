@@ -27,9 +27,9 @@ function Jumbotron(props) {
       
     }}
     >
-      <div>
+      <div >
       <h1 className="display-2">{props.pageTitle}</h1>
-      <button class="fab fa-github btn btn-outline-primary btn-lg m-2"> <a href="https://github.com/dimple23/StockTracker">
+      <button class="fab fa-github btn btn-outline-primary btn-lg m-2 github"> <a href="https://github.com/dimple23/StockTracker">
 							
 					 
              github
