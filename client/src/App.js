@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Stocks from './pages/Stocks';
 import User from './pages/User/User';
 import Saved from './pages/Saved';
-
+import './App.css';
 //import Save from './pages/save';
 //import StockNews from './components/StockNews';
 //import StockData from './components/StockData';

@@ -5,11 +5,13 @@ import {
 } from 'reactstrap';
 //import Jumbo from './Jumbotron/Jumbo.css'
 //import Save from '../pages/save';
+
 import { removenews, createSavednews } from '../utils/API';
 
 
 
 import axios from 'axios';
+import {} from 'material-ui/styles/colors';
 
 class StockNews extends Component {
     state = {
@@ -94,7 +96,7 @@ class StockNews extends Component {
 
         return (
           
-                    <ListGroup id="news" className="stock-chart">
+                    <ListGroup id="news" className="stock-chart text-info news" >
                         
                           <h1 className="text-center tab- table-info "> Business-News </h1>
                         {

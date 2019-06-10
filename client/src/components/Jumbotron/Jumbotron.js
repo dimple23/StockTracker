@@ -27,7 +27,15 @@ function Jumbotron(props) {
       
     }}
     >
+      <div>
       <h1 className="display-2">{props.pageTitle}</h1>
+      <button class="fab fa-github btn btn-outline-primary btn-lg m-2"> <a href="https://github.com/dimple23/StockTracker">
+							
+					 
+             github
+               </a>
+             </button>
+      </div>
 
       {/* <NavLink to="/" className="btn btn-outline-dark btn-lg m-2">
         View All Stocks
@@ -54,12 +62,7 @@ function Jumbotron(props) {
         Saved News
       </NavLink> )  : "" }
 
-        <button class="fab fa-github btn btn-outline-primary btn-lg m-2"> <a href="https://github.com/dimple23/StockTracker">
-							
-					 
-             github
-               </a>
-             </button>
+        
      
     </div>
   )

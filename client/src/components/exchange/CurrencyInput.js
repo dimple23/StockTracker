@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import Proptypes from 'prop-types';
+//import Proptypes from 'prop-types';
 import './CurrencyInput.css';
 
 class CurrencyInput extends PureComponent {
