@@ -11,7 +11,7 @@ class Stocks extends Component {
   state = {
     isLoggedIn: false,
     stocklist: [],
-    stockapikeys: [],
+    stockapikeys: {},
     newsapikeys: [],
     quandlapikeys: [],
     yesterdaystock: [],
@@ -36,6 +36,9 @@ class Stocks extends Component {
   handleGetApiData = () => {
     let m = moment().format('YYYY-MM-DD');
     let yesterday = moment().subtract(1, "days").format('YYYY-MM-DD');
+    if (moment().format("dddd") === "Monday") {
+      yesterday = moment().subtract(3, 'days').format("YYYY-MM-DD");
+    }
 
     console.log(m);
     getApiData().then(({data}) => this.setState({
@@ -44,16 +47,16 @@ class Stocks extends Component {
     }));
   }
 
-  handleGetApiData = () => {
-    getApiData().then(({ data }) => {
-      data = Object.keys(data).map(function (key) {
-        return [Number(key), data[key]];
-      });
-      this.setState({ stockapikeys: data })
-    } )
+  // handleGetApiData = () => {
+  //   getApiData().then(({ data }) => {
+  //     data = Object.keys(data).map(function (key) {
+  //       return [Number(key), data[key]];
+  //     });
+  //     this.setState({ stockapikeys: data })
+  //   } )
 
 
-  }
+  // }
 
   getNews = () => {
     getAllNews().then(({ data }) => this.setState({ newsapikeys: data }))
@@ -66,7 +69,9 @@ class Stocks extends Component {
 
 
   render() {
+    console.log(this.state.yesterdaystock)
     return (
+
       <React.Fragment>
         <Jumbotron
         
@@ -79,6 +84,10 @@ class Stocks extends Component {
         {/* {console.log(this.state.stockapikeys)} */}
 
         <Image />
+        <div className="row">
+
+        <div className="col-12 col-md-6">
+        {Object.keys(this.state.stockapikeys).length > 0 && (
         <Chart data={{
           labels: ["open", "high", "low", "close", "adjusted"],
           datasets: [
@@ -98,8 +107,12 @@ class Stocks extends Component {
           //   data: [14, 15, 21, 0, 12, 4, 2]
 
           // }
-        ]}} />
+        ]}} />)}
+        </div>
+        <div className="col-12 col-md-6">
         <CurrencyConverterContainer />
+        </div>
+        </div>
         <StockNews isLoggedIn={this.state.isLoggedIn}/>
       </React.Fragment>
     )
