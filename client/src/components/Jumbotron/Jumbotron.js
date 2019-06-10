@@ -48,11 +48,11 @@ function Jumbotron(props) {
 
      
 
-          { <NavLink to="/saved" className="btn btn-outline-primary btn-lg m-2"
+      {/* <NavLink to="/saved" className="btn btn-outline-primary btn-lg m-2"
       // style={{ 'display:none' }}
       >
         Saved News
-      </NavLink>   }
+      </NavLink>  */}
     </div>
   )
 }
