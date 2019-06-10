@@ -1,0 +1,9 @@
+.col-12 {
+  padding-right: 0px;
+  
+}
+.background {
+  background-image: url("/assets/img/background.jpg");
+  background-position: center;
+  background-size: cover;
+}
