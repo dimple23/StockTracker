@@ -6,6 +6,9 @@ import Image from '../components/image/Index';
 import Chart from "../components/Chart";
 import moment from "moment";
 import StockNews from '../components/StockNews';
+import "./stock.css";
+
+
 
 class Stocks extends Component {
   state = {
@@ -109,7 +112,7 @@ class Stocks extends Component {
           // }
         ]}} />)}
         </div>
-        <div className="col-12 col-md-6">
+        <div className="col-12 col-md-6 background"  >
         <CurrencyConverterContainer />
         </div>
         </div>

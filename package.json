@@ -25,6 +25,7 @@
     "express": "^4.17.1",
     "i": "^0.3.6",
     "if-env": "^1.0.4",
+    "inspector": "^0.5.0",
     "js-money": "^0.6.3",
     "jsonwebtoken": "^8.5.1",
     "material-ui": "^0.20.2",

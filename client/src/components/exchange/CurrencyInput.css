@@ -1,18 +1,16 @@
-/* body {
-    float: right;
-} */
-/* .currency-input-container {
-    
-
-} */
 
 .input-group-addon {
     padding: 6px 12px;
     font-size: 14px;
     font-weight: 200;
-    color: #f5f5f5;
+    color: white;
     text-align: center;
-    background-color: #1a10debf;
-    border: 1px solid #ccc;
+    background-color: #01c4c2;
+    border: 1px solid #343030;
     border-radius: 10px;    
+}
+
+.currency-convert-form {
+    background: #08081500;
+    color: #111111ec
 }

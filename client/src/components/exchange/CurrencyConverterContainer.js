@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 //import Proptypes from 'prop-types';
+import './CurrencyInput.css'
 import CurrencyInput from './CurrencyInput';
 import Money from 'js-money';
 
