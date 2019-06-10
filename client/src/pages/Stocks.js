@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Jumbotron from '../components/Jumbotron/Jumbotron';
 import { getAllStocks, getApiData, getAllNews, quandlStock } from '../utils/API';
-import Image from '../components/image/Index'
+import CurrencyConverterContainer from '../components/exchange/CurrencyConverterContainer';
+import Image from '../components/image/Index';
 import Chart from "../components/Chart";
 import moment from "moment";
 import StockNews from '../components/StockNews';
@@ -12,8 +13,8 @@ class Stocks extends Component {
     stockapikeys: [],
     newsapikeys: [],
     quandlapikeys: [],
-    yesterdaystock: []
-  };
+    yesterdaystock: [],
+  }
 
   // use component did mount to get all stocks on load
   componentDidMount() {
@@ -92,6 +93,7 @@ class Stocks extends Component {
 
           // }
         ]}} />
+        <CurrencyConverterContainer />
         <StockNews />
       </React.Fragment>
     )
