@@ -6,8 +6,8 @@ import Money from 'js-money';
 
 // Hard-coded values that would normally be dynamically passed in
 // as props to CurrencyConverterContainer
-const USD_TO_EUR = 1.1333;
-const EUR_TO_USD = 1 / 1.1333;
+const EUR_TO_USD= 1.1333;
+const USD_TO_EUR  = 1 / 1.1333;
 const HEADER_TEXT_PROP = 'CURRENCY';
 const COUNTRY_TEXT = '-EXCHANGE';
 
